@@ -1,0 +1,44 @@
+﻿
+@*@{
+    Layout = null;
+}*@
+
+@using EPiServer.Framework.Web.Mvc.Html;
+@using EPiServer.Core;
+@model PageData
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+@*    <meta name="viewport" content="width=device-width" />*@
+    @*    <title>_Root</title>*@
+
+    <title>@Model.PageName</title>
+    <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap-responsive.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Static/css/media.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Static/css/style.css")"/>
+    <link rel="stylesheet" href="@Url.Content("~/Static/css/editmode.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Static/js/jquery.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Static/js/bootstrap.js")"></script>
+</head>
+<body>
+@Html.RenderEPiServerQuickNavigator()
+    @Html.FullRefreshPropertiesMetaData()
+
+<div class="container">
+    <div class="row">
+        <div id="header">
+            <div class="span2">
+                <img src="/Static/gfx/logotype.png"/>
+            </div>
+            <div class="span10"></div>
+        </div>
+    </div>
+    <hr/>
+    @RenderBody()
+</div>
+</body>
+</html>
