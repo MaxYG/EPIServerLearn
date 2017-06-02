@@ -8,7 +8,7 @@ using EPiServer.SpecializedProperties;
 namespace EpiserverSiteWithEmpty.Models.Pages
 {
     [ContentType(DisplayName = "StartPage", GUID = "313d6546-f5f9-4b03-ae1a-bae427e7477f", Description = "")]
-    public class StartPage : PageData
+    public class StartPage : SitePageData
     {
             [CultureSpecific]
             [Display(

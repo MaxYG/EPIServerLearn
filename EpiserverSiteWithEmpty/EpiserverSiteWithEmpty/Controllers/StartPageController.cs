@@ -1,16 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using EpiserverSiteWithEmpty.Models.Pages;
-using EPiServer;
-using EPiServer.Core;
-using EPiServer.Framework.DataAnnotations;
-using EPiServer.Web.Mvc;
 
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
-    public class StartPageController : PageController<StartPage>
+    public class StartPageController : PageControllerBase<StartPage>
     {
         public ActionResult Index(StartPage currentPage)
         {

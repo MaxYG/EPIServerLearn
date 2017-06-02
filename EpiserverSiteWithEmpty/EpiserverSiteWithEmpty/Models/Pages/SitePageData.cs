@@ -17,6 +17,8 @@ namespace EpiserverSiteWithEmpty.Models.Pages
         [UIHint(UIHint.Textarea)]
         public virtual string MetaDescription { get; set; }
 
+
+
         [Display(GroupName = SystemTabNames.Content, Order = 100)]
         [UIHint(UIHint.Image)]
         public virtual EPiServer.Core.ContentReference PageImage { get; set; }
