@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Layouts/_Root.cshtml";
+}
+
+<div class="row">
+    <div class="span8">
+        @RenderBody()
+    </div>
+    <div class="span4">
+        @if (IsSectionDefined("RelatedContent"))
+        {
+            @RenderSection("RelatedContent")
+        }
+    </div>
+</div>
+

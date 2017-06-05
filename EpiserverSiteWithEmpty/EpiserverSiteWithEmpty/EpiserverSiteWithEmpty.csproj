@@ -238,6 +238,7 @@
   <ItemGroup>
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
+    <Compile Include="Controllers\ProductPageController.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -246,6 +247,8 @@
     <Compile Include="Helpers\CategorizableExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\UrlHelpers.cs" />
+    <Compile Include="Models\Media\ImageFile.cs" />
+    <Compile Include="Models\Pages\ProductPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Models\StandardPage.cs" />
@@ -255,7 +258,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Blocks\" />
-    <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +319,8 @@
     <Content Include="Views\Shared\Layouts\_Root.cshtml" />
     <Content Include="Views\Shared\Layouts\_LeftNavigation.cshtml" />
     <Content Include="Views\StandardPage\Index.cshtml" />
+    <Content Include="Views\Shared\Layouts\_TwoPlusOne.cshtml" />
+    <Content Include="Views\ProductPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
