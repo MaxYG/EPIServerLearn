@@ -11,7 +11,7 @@ namespace EpiserverSiteWithEmpty.Helpers
 {
     public static class UrlHelpers
     {
-        /// <summary>
+        /*/// <summary>
         /// Returns the target URL for a ContentReference. Respects the page's shortcut setting
         /// so if the page is set as a shortcut to another page or an external URL that URL
         /// will be returned.
@@ -63,6 +63,6 @@ namespace EpiserverSiteWithEmpty.Helpers
             values[RoutingConstants.NodeKey] = contentLink;
             values[RoutingConstants.LanguageKey] = ContentLanguage.PreferredCulture.Name;
             return values;
-        }
+        }*/
     }
 }

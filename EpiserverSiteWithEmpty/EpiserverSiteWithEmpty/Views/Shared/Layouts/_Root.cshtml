@@ -5,7 +5,8 @@
 
 @using EPiServer.Framework.Web.Mvc.Html;
 @using EPiServer.Core;
-@model PageData
+@*@model PageData*@
+@model EpiserverSiteWithEmpty.Models.viewModels.IPageViewModel<EpiserverSiteWithEmpty.Models.Pages.SitePageData>
 
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 @*    <meta name="viewport" content="width=device-width" />*@
     @*    <title>_Root</title>*@
 
-    <title>@Model.PageName</title>
+    <title>@Model.CurrentPage.Name</title>
     <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap.css")"/>
     <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap-responsive.css")"/>
     <link rel="stylesheet" href="@Url.Content("~/Static/css/media.css")"/>

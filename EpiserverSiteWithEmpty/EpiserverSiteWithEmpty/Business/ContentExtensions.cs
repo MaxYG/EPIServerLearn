@@ -44,5 +44,20 @@ namespace EpiserverSiteWithEmpty.Business
             }
             return page.VisibleInMenu;
         }
+
+        // Gets the top level page of the section this page is in. Used to build our submenu.
+        public static IContent GetSection(ContentReference contentLink)
+        {
+            var currentContent = DataFactory.Instance.Get<IContent>(contentLink);
+            if (currentContent.ParentLink != null && currentContent.ParentLink.CompareToIgnoreWorkID(ContentReference.StartPage))
+            {
+                return currentContent;
+            }
+
+            return DataFactory.Instance.GetAncestors(contentLink)
+                .OfType<PageData>()
+                .SkipWhile(x => x.ParentLink == null || !x.ParentLink.CompareToIgnoreWorkID(ContentReference.StartPage))
+                .FirstOrDefault();
+        }
     }
 }

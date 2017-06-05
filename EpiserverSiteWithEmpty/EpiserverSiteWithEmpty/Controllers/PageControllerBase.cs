@@ -6,7 +6,7 @@ using EPiServer.Web.Mvc;
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
-    public abstract class PageControllerBase <T>  : PageController<PageData> where T : SitePageData
+    public abstract class PageControllerBase <T>  : PageController<T> where T : SitePageData
     {
         public ActionResult Logout()
         {

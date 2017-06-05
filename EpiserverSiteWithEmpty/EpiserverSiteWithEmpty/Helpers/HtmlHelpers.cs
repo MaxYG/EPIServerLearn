@@ -16,7 +16,7 @@ namespace EpiserverSiteWithEmpty.Helpers
 {
     public static class HtmlHelpers
     {
-        /// <summary>
+       /* /// <summary>
         /// Returns an element for each child page of the rootLink using the itemTemplate.
         /// </summary>
         /// <param name="helper">The html helper in whose context the list should be created</param>
@@ -178,6 +178,6 @@ namespace EpiserverSiteWithEmpty.Helpers
                     _viewContext.Writer.Write("</a>");
                 }
             }
-        }
+        }*/
     }
 }
