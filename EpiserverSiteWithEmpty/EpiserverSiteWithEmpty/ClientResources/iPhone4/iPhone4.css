@@ -1,0 +1,6 @@
+﻿/*
+    Adding styles for iPhone4 resolution
+*/
+.Sleek .epi-viewPort-320x480 {
+    background: url("device-320x480.png") center center no-repeat;
+}
