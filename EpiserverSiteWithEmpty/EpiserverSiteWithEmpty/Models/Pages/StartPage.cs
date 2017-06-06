@@ -24,5 +24,11 @@ namespace EpiserverSiteWithEmpty.Models.Pages
         public virtual string Heading { get; set; }
 
 
+        [Display(
+                GroupName = SystemTabNames.Content,
+                Order = 300)]
+        public virtual ContentArea MainContentArea { get; set; }
+
+
     }
 }

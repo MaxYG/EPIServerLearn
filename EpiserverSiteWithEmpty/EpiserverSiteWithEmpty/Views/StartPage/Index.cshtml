@@ -1,9 +1,7 @@
-﻿@using EPiServer.Core
+﻿
 @using EPiServer.Web.Mvc.Html
 
 @model EpiserverSiteWithEmpty.Models.viewModels.DefaultPageViewModel<EpiserverSiteWithEmpty.Models.Pages.StartPage>
-@*@model EpiserverSiteWithEmpty.Models.Pages.StartPage*@
-
 
 
 <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
@@ -13,13 +11,5 @@
     @Html.PropertyFor(m => m.CurrentPage.MainBody)
 </div>
 
+@Html.PropertyFor(x=>x.CurrentPage.MainContentArea,new {CssClass="border",tag="span4"})
 
-@*
-
-<h1 @Html.EditAttributes(x => x.Heading)>
-    @(Model.Heading ?? Model.PageName)
-</h1>
-<div>
-    @Html.PropertyFor(m => m.MainBody)
-</div>
-*@
