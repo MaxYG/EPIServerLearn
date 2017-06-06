@@ -18,7 +18,10 @@
     </div>
 </div>
 
+@Html.PropertyFor(x=>x.CurrentPage.MainContentArea,new {CssClass="border",tag="span8"})
+
 @section RelatedContent{
+    defined related content for product page
     <div @Html.EditAttributes(x => x.CurrentPage.PageImage)>
         <img src="@Url.ContentUrl(Model.CurrentPage.PageImage)"/>
     </div>
@@ -26,6 +29,7 @@
         <h2 @Html.EditAttributes(x => x.CurrentPage.PageName)>
             @Model.CurrentPage.PageName
         </h2>
-        <p>@Html.PropertyFor(x=>x.CurrentPage.UniqueSellingPoints)</p>
+        <p>@Html.PropertyFor(x => x.CurrentPage.UniqueSellingPoints)</p>
     </div>
+    @Html.PropertyFor(x=>x.CurrentPage.RelatedContentArea,new {CssClass="border",tab="span4"})
 }

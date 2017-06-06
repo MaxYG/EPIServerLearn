@@ -1,0 +1,33 @@
+﻿
+@using EPiServer.Core
+@model EpiserverSiteWithEmpty.Models.Pages.SitePageData
+    
+@{
+    Layout = null;
+}
+
+<div class="block span8">
+    page partial wide
+    @if (Model.HasTemplate())
+    {
+        <a href="@Url.PageUrl(Model.LinkURL)">
+            <div class="media">
+                <div class="mediaImg">
+                    <img src="@Url.ContentUrl(Model.PageImage)"/>
+                </div>
+                <h2>@Model.PageImage</h2>
+                <p>@Html.PropertyFor(x => x.TeaserText)</p>
+            </div>
+        </a>
+    }
+    else
+    {
+        <div class="media">
+            <div class="mediaImg">
+                <img src="@Url.ContentUrl(Model.PageImage)"/>
+            </div>
+            <h2>@Model.PageImage</h2>
+            <p>@Html.PropertyFor(x => x.TeaserText)</p>
+        </div>
+    }
+</div>
