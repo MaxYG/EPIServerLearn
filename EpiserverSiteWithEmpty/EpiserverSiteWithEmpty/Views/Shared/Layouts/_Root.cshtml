@@ -1,21 +1,10 @@
 ﻿
-@*@{
-    Layout = null;
-}*@
-
-@using EPiServer.Framework.Web.Mvc.Html;
-@using EPiServer.Core;
-@*@model PageData*@
 @model EpiserverSiteWithEmpty.Models.viewModels.IPageViewModel<EpiserverSiteWithEmpty.Models.Pages.SitePageData>
-
 
 <!DOCTYPE html>
 
 <html>
 <head>
-@*    <meta name="viewport" content="width=device-width" />*@
-    @*    <title>_Root</title>*@
-
     <title>@Model.CurrentPage.Name</title>
     <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap.css")"/>
     <link rel="stylesheet" href="@Url.Content("~/Static/css/bootstrap-responsive.css")"/>
@@ -26,8 +15,9 @@
     <script type="text/javascript" src="@Url.Content("~/Static/js/bootstrap.js")"></script>
 </head>
 <body>
+
 @Html.RenderEPiServerQuickNavigator()
-    @Html.FullRefreshPropertiesMetaData()
+@Html.FullRefreshPropertiesMetaData()
 
 <div class="container">
     <div class="row">
@@ -35,7 +25,9 @@
             <div class="span2">
                 <img src="/Static/gfx/logotype.png"/>
             </div>
-            <div class="span10"></div>
+            <div class="span10">
+                @{Html.RenderPartial("Navigation", Model);}
+            </div>
         </div>
     </div>
     <hr/>

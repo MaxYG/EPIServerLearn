@@ -321,6 +321,7 @@
     <Content Include="Views\StandardPage\Index.cshtml" />
     <Content Include="Views\Shared\Layouts\_TwoPlusOne.cshtml" />
     <Content Include="Views\ProductPage\Index.cshtml" />
+    <Content Include="Views\Shared\Navigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

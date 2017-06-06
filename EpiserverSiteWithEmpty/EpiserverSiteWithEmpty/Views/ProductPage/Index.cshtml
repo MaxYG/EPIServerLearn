@@ -24,10 +24,8 @@
     </div>
     <div class="block colorBox theme1">
         <h2 @Html.EditAttributes(x => x.CurrentPage.PageName)>
-            @*todo:t  *@
             @Model.CurrentPage.PageName
-            @*            Model.CurrentPage.PageName*@
         </h2>
-        <p>@Html.PropertyFor(X=>X.CurrentPage.UniqueSellingPoints)</p>
+        <p>@Html.PropertyFor(x=>x.CurrentPage.UniqueSellingPoints)</p>
     </div>
 }
