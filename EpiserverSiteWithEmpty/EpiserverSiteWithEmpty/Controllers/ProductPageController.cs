@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using EpiserverSiteWithEmpty.Models.Pages;
 using EpiserverSiteWithEmpty.Models.viewModels;
-using EPiServer.Web.Mvc;
+using EPiServer.DataAbstraction;
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
