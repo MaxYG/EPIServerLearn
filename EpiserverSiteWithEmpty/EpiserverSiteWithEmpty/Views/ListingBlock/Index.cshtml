@@ -1,0 +1,19 @@
+﻿@model EpiserverSiteWithEmpty.Models.ViewModels.ListingBlockModel
+
+<h2 @Html.EditAttributes(x => x.Heading)>@Model.Heading</h2>
+<hr/>
+@if (Model.Items!=null)
+{
+    foreach (var item in Model.Items)
+    {
+        <div class="listResult theme1">
+            <h3>@Html.PageLink(item)</h3>
+            <p class="date">@item.StartPublish.Value.ToString("d MMMM yyyy")</p>
+            @if (item.Property["MainBody"]!=null)
+            {
+                   @item.Property["MainBody"].Value
+            }
+            <hr />
+        </div>
+    }
+}
