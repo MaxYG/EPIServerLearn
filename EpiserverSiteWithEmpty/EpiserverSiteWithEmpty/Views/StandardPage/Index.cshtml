@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/Layouts/_LeftNavigation.cshtml";
 }
 
-<h1 >
+<h1>
     @Html.PropertyFor(x => x.CurrentPage.PageName)
 </h1>
 <div class="row">
     <div class="span8 clearfix">
-        @Html.PropertyFor(x=>x.CurrentPage.MainBody)
         standard page
+        @Html.PropertyFor(x => x.CurrentPage.MainBody)
+        @Html.PropertyFor(x => x.CurrentPage.Teaser)
     </div>
+  
 </div>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EpiserverSiteWithEmpty.Models.Blocks;
 using EpiserverSiteWithEmpty.Models.Pages;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
@@ -18,6 +19,14 @@ namespace EpiserverSiteWithEmpty.Models
                     GroupName = SystemTabNames.Content,
                     Order = 310)]
                 public virtual XhtmlString MainBody { get; set; }
+
+   
+        [Display(
+                    Name = "Teaser block",
+                    Description = "block as property",
+                    GroupName = SystemTabNames.Content,
+                    Order = 320)]
+        public virtual TeaserBlock Teaser { get; set; }
     }
     
 }
