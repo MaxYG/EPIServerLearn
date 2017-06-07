@@ -1,0 +1,11 @@
+﻿@model EpiserverSiteWithEmpty.Models.Blocks.TeaserBlock
+
+<div class="span">
+    <div class="mediaImg">
+        <img src="@Url.ContentUrl(Model.TeaserImage)"/>
+    </div>
+    <div class="mediaText">
+        <h2>@Model.TeaserHeading</h2>
+        <p>@Html.PropertyFor(x=>x.TeaserText)</p>
+    </div>
+</div>
