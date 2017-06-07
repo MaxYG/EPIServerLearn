@@ -3,7 +3,6 @@
 
 @model EpiserverSiteWithEmpty.Models.ViewModels.DefaultPageViewModel<EpiserverSiteWithEmpty.Models.Pages.StartPage>
 
-
 <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
     @(Model.CurrentPage.Heading??Model.CurrentPage.PageName)
 </h1>
@@ -14,3 +13,4 @@
 
 @Html.PropertyFor(x=>x.CurrentPage.MainContentArea,new {CssClass="border",tag="span4"})
 
+exercise e2 create news page & news Items 没有达到预期效果

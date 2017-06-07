@@ -1,0 +1,17 @@
+﻿
+@model EpiserverSiteWithEmpty.Models.ViewModels.DefaultPageViewModel<EpiserverSiteWithEmpty.Models.Pages.NewsPage>
+@{
+    Layout = "~/Views/Shared/Layouts/_LeftNavigation.cshtml";
+}
+
+<h1>@Html.PropertyFor(x => x.CurrentPage.PageName)</h1>
+<p class="introduction" >
+    @Html.PropertyFor(m => m.CurrentPage.MetaDescription)
+</p>
+
+<div class="row">
+    <div class="span8">
+        @Html.PropertyFor(m => m.CurrentPage.MainBody)
+        @Html.PropertyFor(m => m.CurrentPage.MainListing)
+    </div>
+</div>

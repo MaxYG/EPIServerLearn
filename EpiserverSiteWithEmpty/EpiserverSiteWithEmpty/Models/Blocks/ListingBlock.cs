@@ -19,15 +19,11 @@ namespace EpiserverSiteWithEmpty.Models.Blocks
          */
 
         [Display(
-                    Name = "Heading",
-                    Description = "listing block heading",
                     GroupName = SystemTabNames.Content,
                     Order = 100)]
         public virtual string Heading { get; set; }
 
         [Display(
-                   Name = "RootPage",
-                   Description = "listing block rootpage",
                    GroupName = SystemTabNames.Content,
                    Order = 200)]
         public virtual PageReference RootPage { get; set; }
