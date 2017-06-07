@@ -249,6 +249,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CategorizableExtensions.cs" />
+    <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\ProductPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
@@ -259,7 +260,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Blocks\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Views\PagePartialWide\" />
   </ItemGroup>
@@ -330,6 +330,7 @@
     <Content Include="Views\Shared\PagePartials\PagePartial.cshtml" />
     <Content Include="Views\Shared\PagePartials\PagePartialWide.cshtml" />
     <Content Include="module.config" />
+    <Content Include="Views\Shared\EditorialBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
