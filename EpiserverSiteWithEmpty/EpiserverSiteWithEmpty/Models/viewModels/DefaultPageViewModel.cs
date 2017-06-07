@@ -2,7 +2,7 @@
 using EpiserverSiteWithEmpty.Models.Pages;
 using EPiServer.Core;
 
-namespace EpiserverSiteWithEmpty.Models.viewModels
+namespace EpiserverSiteWithEmpty.Models.ViewModels
 {
     public class DefaultPageViewModel <T> :IPageViewModel<T> where T:SitePageData
     {

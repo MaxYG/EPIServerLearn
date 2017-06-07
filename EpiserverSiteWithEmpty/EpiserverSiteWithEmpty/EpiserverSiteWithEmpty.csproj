@@ -242,6 +242,7 @@
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\PagePartialController.cs" />
     <Compile Include="Controllers\PagePartialWideController.cs" />
+    <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
@@ -253,12 +254,14 @@
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
+    <Compile Include="Models\Pages\PreviewBlock.cs" />
     <Compile Include="Models\Pages\ProductPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Models\StandardPage.cs" />
-    <Compile Include="Models\viewModels\DefaultPageViewModel.cs" />
-    <Compile Include="Models\viewModels\IPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\BlockEditPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\DefaultPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +337,7 @@
     <Content Include="module.config" />
     <Content Include="Views\Shared\EditorialBlock.cshtml" />
     <Content Include="Views\TeaserBlock\Index.cshtml" />
+    <Content Include="Views\Preview\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using EpiserverSiteWithEmpty.Models.Pages;
-using EpiserverSiteWithEmpty.Models.viewModels;
+using EpiserverSiteWithEmpty.Models.ViewModels;
 
 
 namespace EpiserverSiteWithEmpty.Controllers

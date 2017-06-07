@@ -1,6 +1,6 @@
 ﻿using EpiserverSiteWithEmpty.Models.Pages;
 
-namespace EpiserverSiteWithEmpty.Models.viewModels
+namespace EpiserverSiteWithEmpty.Models.ViewModels
 {
     public interface IPageViewModel<out T> where T:SitePageData
     {
