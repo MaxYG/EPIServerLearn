@@ -1,10 +1,17 @@
-﻿
+﻿@using EpiserverSiteWithEmpty.Models.Pages
+@using EpiserverSiteWithEmpty.Models.ViewModels
+
 @{
     Layout = "~/Views/Shared/Layouts/_Root.cshtml";
 }
 
 <div class="row">
     <div class="span4">
+      
+        @{
+            var baseModel=new DefaultPageViewModel<SitePageData>(Model.CurrentPage);
+            Html.RenderPartial("SubNavigation",baseModel);
+        }
         @RenderSection("RelatedContent", false)
         left navigation 4
     </div>

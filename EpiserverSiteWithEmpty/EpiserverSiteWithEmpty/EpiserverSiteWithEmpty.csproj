@@ -346,6 +346,7 @@
     <Content Include="Views\Preview\Index.cshtml" />
     <Content Include="Views\ListingBlock\Index.cshtml" />
     <Content Include="Views\NewsPage\Index.cshtml" />
+    <Content Include="Views\Shared\SubNavigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
