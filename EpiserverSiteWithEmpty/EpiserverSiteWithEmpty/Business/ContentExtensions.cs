@@ -1,10 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
 using EPiServer.Framework.Web;
 using EPiServer.ServiceLocation;
-using EPiServer;
 
 namespace EpiserverSiteWithEmpty.Business
 {
@@ -14,13 +14,24 @@ namespace EpiserverSiteWithEmpty.Business
     public static class ContentExtensions
     {
         /// <summary>
+        /// Shorthand for DataFactory.Instance.Get
+        /// </summary>
+        /// <typeparam name="TContent"></typeparam>
+        /// <param name="contentLink"></param>
+        /// <returns></returns>
+        public static IContent Get<TContent>(this ContentReference contentLink) where TContent : IContent
+        {
+            return DataFactory.Instance.Get<TContent>(contentLink);
+        }
+
+        /// <summary>
         /// Filters content which should not be visible to the user. 
         /// </summary>
         public static IEnumerable<T> FilterForDisplay<T>(this IEnumerable<T> contents, bool requirePageTemplate = false, bool requireVisibleInMenu = false)
             where T : IContent
         {
             var accessFilter = new FilterAccess();
-            var publishedFilter = new FilterPublished();
+            var publishedFilter = new FilterPublished(ServiceLocator.Current.GetInstance<IContentRepository>());
             contents = contents.Where(x => !publishedFilter.ShouldFilter(x) && !accessFilter.ShouldFilter(x));
             if (requirePageTemplate)
             {
