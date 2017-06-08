@@ -1,5 +1,6 @@
 ﻿
 @using EPiServer.Core
+@using EpiserverSiteWithEmpty.Helpers
 
 @{
     var contentRepository = EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.IContentRepository>();
@@ -7,11 +8,33 @@
     var childPages = contentRepository.GetChildren<PageData>(ContentReference.StartPage);
 }
 
-<b>@Html.PageLink(ContentReference.StartPage)</b>
+@*<b>@Html.PageLink(ContentReference.StartPage)</b>
 
 @foreach (var page in childPages)
 {
     <b>
         @Html.PageLink(page)
     </b>
-}
+}*@
+
+<div class="alloyMenu">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="@(Model.CurrentPage.ContentLink.CompareToIgnoreWorkID(ContentReference.StartPage) ? "active" : null)">
+                        @Html.PageLink(ContentReference.StartPage)
+                    </li>
+                    @Html.MenuList(ContentReference.StartPage,@<li class="@(item.Selected ? "active" : null)">
+                                                                  @Html.PageLink(item.Page)
+                                                              </li>)
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
