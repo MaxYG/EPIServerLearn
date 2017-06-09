@@ -1,0 +1,26 @@
+﻿@model EpiserverSiteWithEmpty.Models.ViewModels.DefaultPageViewModel<EpiserverSiteWithEmpty.Models.Pages.FAQPage>
+
+<h2>
+    Alloy FAQ page
+</h2>
+<hr/>
+<div class="navbar">
+    <h3>Enter a question</h3>
+    @using (Html.BeginForm("Submit", null, null, FormMethod.Get))
+    {
+        <input type="text" tabindex="1" name="question" value=""/>
+        <input type="submit" tabindex="2" class="btn" value="Submit"/>
+    }
+</div>
+<div class="nav-stacked">
+    <h2>
+        faq list
+    </h2>
+    @foreach (var faq in Model.CurrentPage.FAQItems)
+    {
+        <h3>@faq.Question</h3>
+        <div style="word-break: break-all;">@faq.Answer</div>
+        <hr/>
+    }
+</div>
+
