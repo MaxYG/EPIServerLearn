@@ -269,6 +269,7 @@
     <Compile Include="Models\StandardPage.cs" />
     <Compile Include="Models\ViewModels\BlockEditPageViewModel.cs" />
     <Compile Include="Models\ViewModels\DefaultPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\FooterModel.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ListingBlockModel.cs" />
     <Compile Include="Models\ViewModels\SearchPageViewModel.cs" />
@@ -281,6 +282,7 @@
   <ItemGroup>
     <Content Include="ClientResources\iPhone4\device-320x480.png" />
     <Content Include="ClientResources\iPhone4\iPhone4.css" />
+    <Content Include="Resources\LanguageFiles\Views.xml" />
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />
     <Content Include="Static\css\bootstrap.css" />
@@ -352,6 +354,7 @@
     <Content Include="Views\NewsPage\Index.cshtml" />
     <Content Include="Views\Shared\SubNavigation.cshtml" />
     <Content Include="Views\SearchPage\Index.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

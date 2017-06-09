@@ -1,0 +1,31 @@
+﻿@model EpiserverSiteWithEmpty.Models.ViewModels.FooterModel
+
+@using EPiServer.Core
+
+
+<div class="row">
+    <div class="span12 footer">
+        <hr />
+        <div class="row">
+            <div class="span12">
+                <h3>@Html.Translate("/footer/products")</h3>
+                <ul class="nav nav-pills">
+                    @foreach (PageData item in Model.ProductPages)
+                    {
+                        <li>@Html.PageLink(item)</li>
+                    }
+                    <li class="nav nav-pills pull-right">
+                        @if (Model.LoggedIn)
+                        {
+                            @Html.ActionLink(Html.Translate("/footer/logout"), "Logout")
+                        }
+                        else
+                        {
+                            <a href="@Model.LoginUrl" title="@Html.Translate("/footer/login")">@Html.Translate("/footer/login")</a>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

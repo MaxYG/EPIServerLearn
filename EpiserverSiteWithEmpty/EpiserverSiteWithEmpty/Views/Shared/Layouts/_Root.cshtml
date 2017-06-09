@@ -1,4 +1,5 @@
 ﻿
+@using EpiserverSiteWithEmpty.Models.ViewModels
 @model EpiserverSiteWithEmpty.Models.ViewModels.IPageViewModel<EpiserverSiteWithEmpty.Models.Pages.SitePageData>
 
 <!DOCTYPE html>
@@ -32,6 +33,7 @@
     </div>
     <hr/>
     @RenderBody()
+    @{Html.RenderPartial("Footer",new FooterModel(Model.CurrentPage));}
     root page
 </div>
 </body>
