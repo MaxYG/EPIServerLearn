@@ -29,6 +29,9 @@ namespace EpiserverSiteWithEmpty.Models.Pages
                 Order = 300)]
         public virtual ContentArea MainContentArea { get; set; }
 
+        [Display(GroupName = SystemTabNames.Content)]
+        public virtual PageReference SearchPageLink { get; set; }
+
 
     }
 }

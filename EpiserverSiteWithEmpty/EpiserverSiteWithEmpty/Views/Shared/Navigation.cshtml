@@ -1,6 +1,8 @@
 ﻿
+@using EpiserverSiteWithEmpty.Business
 @using EPiServer.Core
 @using EpiserverSiteWithEmpty.Helpers
+@using EPiServer
 
 @{
     var contentRepository = EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.IContentRepository>();
@@ -31,9 +33,24 @@
                         @Html.PageLink(ContentReference.StartPage)
                     </li>
                     @Html.MenuList(ContentReference.StartPage,@<li class="@(item.Selected ? "active" : null)">
-                                                                  @Html.PageLink(item.Page)
-                                                              </li>)
+                        @Html.PageLink(item.Page)
+                    </li>)
                 </ul>
+                <did class="navbar-search pull-right">
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new
+                    {
+                        @action = DataFactory.Instance
+                            .Get<EpiserverSiteWithEmpty.Models.Pages.StartPage>(PageReference.StartPage)
+                            .SearchPageLink.
+                            ExternalURLFromReference()
+                    }))
+                    {
+                        <input type="text" class="search-query" name="q" id="SearchKeywords"
+                               placeholder="Search"/>
+                        <input type="submit" class="searchButton" id="SearchButton" value=""/>
+                    }
+                </did>
+
             </div>
         </div>
     </div>
