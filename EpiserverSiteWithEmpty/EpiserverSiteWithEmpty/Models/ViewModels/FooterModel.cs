@@ -24,16 +24,18 @@ namespace EpiserverSiteWithEmpty.Models.ViewModels
 
         private void RetrieveSiteProductPages()
         {
-            PropertyCriteriaCollection criteria = new PropertyCriteriaCollection();
+            var criteria = new PropertyCriteriaCollection();
 
-            PropertyCriteria prodpagecriterion = new PropertyCriteria();
-            prodpagecriterion.Condition = CompareCondition.Equal;
-            prodpagecriterion.Name = "PageTypeID";
-            prodpagecriterion.Type = PropertyDataType.PageType;
-
+            var prodpagecriterion = new PropertyCriteria
+            {
+                Condition = CompareCondition.Equal,
+                Name = "PageTypeID",
+                Type = PropertyDataType.PageType,
+                Required = true
+            };
             var contentTypeRepository = ServiceLocator.Current.GetInstance<IContentTypeRepository>();
             prodpagecriterion.Value = contentTypeRepository.Load("ProductPage").ID.ToString();
-            prodpagecriterion.Required = true;
+            
             criteria.Add(prodpagecriterion);
 
             ProductPages = DataFactory.Instance.FindPagesWithCriteria(PageReference.StartPage, criteria);
