@@ -301,6 +301,7 @@
     <Content Include="Static\css\editor.css" />
     <Content Include="Static\css\media.css" />
     <Content Include="Static\css\style.css" />
+    <Content Include="Static\css\test.css" />
     <Content Include="Static\gfx\carouselbackground.png" />
     <Content Include="Static\gfx\contact.jpg" />
     <Content Include="Static\gfx\exampelspan4.png" />
