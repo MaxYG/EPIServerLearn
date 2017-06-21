@@ -269,6 +269,7 @@
     <Compile Include="Models\Pages\SearchPage.cs" />
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\Validator\SitePageDataValidator.cs" />
     <Compile Include="Models\StandardPage.cs" />
     <Compile Include="Models\ViewModels\BlockEditPageViewModel.cs" />
     <Compile Include="Models\ViewModels\DefaultPageViewModel.cs" />

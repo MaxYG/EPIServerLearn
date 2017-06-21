@@ -17,7 +17,8 @@
         @Html.PropertyFor(x => x.CurrentPage.MainBody)
     </div>
 </div>
-
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+@Html.DisplayFor(x => x.CurrentPage.MainBody)
 @Html.PropertyFor(x=>x.CurrentPage.MainContentArea,new {CssClass="border",tag="span8"})
 
 @section RelatedContent{
