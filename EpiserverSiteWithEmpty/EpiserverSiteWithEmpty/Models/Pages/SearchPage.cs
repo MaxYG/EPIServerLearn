@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using EpiserverSiteWithEmpty.Commons;
+using EpiserverSiteWithEmpty.Learning.CustomProperty;
 using EPiServer.Core;
 using EPiServer.DataAnnotations;
 using EPiServer.Framework.DataAnnotations;
@@ -26,5 +27,8 @@ namespace EpiserverSiteWithEmpty.Models.Pages
 
         [UIHint("MyRole")]
         public virtual RoleEnum Role { get; set; }
+
+        [PropertySettings(typeof(SimpleTinyMCESettings))]
+        public virtual XhtmlString CustomPropertySidebar { get; set; }
     }
 }

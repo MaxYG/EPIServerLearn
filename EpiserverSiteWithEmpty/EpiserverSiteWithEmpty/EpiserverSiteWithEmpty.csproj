@@ -244,6 +244,7 @@
     <Compile Include="Commons\RoleEnum.cs" />
     <Compile Include="Controllers\EditHintSampleController.cs" />
     <Compile Include="Controllers\FAQPageController.cs" />
+    <Compile Include="Controllers\GedgetLearningPageController.cs" />
     <Compile Include="Controllers\ListingBlockController.cs" />
     <Compile Include="Controllers\NewsPageController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
@@ -255,14 +256,17 @@
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Controllers\TeaserBlockController.cs" />
+    <Compile Include="Learning\CustomProperty\SimpleTinyMCESettings.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CategorizableExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Learning\Comments\CustomComponent.cs" />
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\ListingBlock.cs" />
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
+    <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\FAQItem.cs" />
     <Compile Include="Models\Pages\FAQPage.cs" />
@@ -383,6 +387,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\LineBreaked.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ChangeColorForMe.cshtml" />
+    <Content Include="Views\GedgetLearningPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
