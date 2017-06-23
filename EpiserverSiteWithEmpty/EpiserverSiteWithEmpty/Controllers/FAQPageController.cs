@@ -6,6 +6,7 @@ using EPiServer;
 using EPiServer.DataAccess;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Mvc;
+using EPiServer.Web.Routing;
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
@@ -15,6 +16,7 @@ namespace EpiserverSiteWithEmpty.Controllers
         {
             /* Implementation of action. You can create your own view model class that you pass to the view or
              * you can pass the page type for simpler templates */
+           
             var contentRepository = ServiceLocator.Current.GetInstance<IContentRepository>();
             currentPage.FAQItems = contentRepository.GetChildren<FAQItem>(currentPage.ContentLink).ToList();
             var model=new DefaultPageViewModel<FAQPage>(currentPage);

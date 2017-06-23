@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using EPiServer.Cms.Shell.UI.ObjectEditing.EditorDescriptors.SelectionFactories;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
+using EPiServer.Framework.DataAnnotations;
 using EPiServer.Shell.ObjectEditing;
 using EPiServer.Web;
 
@@ -45,6 +46,10 @@ namespace EpiserverSiteWithEmpty.Models.Pages
         [Display(GroupName = "Selection", Order = 101)]
         [LanguageSelectionMultiple]
         public virtual string MultipleLanguageAttr { get; set; }
+
+        [Display(GroupName = "Selection", Order = 101)]
+        [UIHint("Banana", PresentationLayer.Website)]
+        public virtual string UIHintXXX { get; set; }
 
         public override void SetDefaultValues(ContentType contentType)
         {

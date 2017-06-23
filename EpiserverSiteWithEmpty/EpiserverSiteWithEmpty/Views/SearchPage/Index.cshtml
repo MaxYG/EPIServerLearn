@@ -1,8 +1,45 @@
 ﻿
 @using EpiserverSiteWithEmpty.Business
+@using EpiserverSiteWithEmpty.Commons
+@using EpiserverSiteWithEmpty.Controllers
+@using EpiserverSiteWithEmpty.Models.ViewModels
 @model EpiserverSiteWithEmpty.Models.ViewModels.SearchPageViewModel
 
 
+
+
+===UIHint start=================================================================================================
+
+<div class="row">
+    Change my color with UIHint: @Html.PropertyFor(x => x.CurrentPage.Username)
+</div>
+<div class="row">
+    <h5 @Html.EditAttributes(x => x.CurrentPage.MoneyDemo)>
+        @Html.DisplayFor(x => x.CurrentPage.MoneyDemo)
+    </h5>
+    
+</div>
+<div class="row">
+    @Html.DisplayFor(m => m.CurrentPage.Role)
+    @Html.PropertyFor(m => m.CurrentPage.Role)
+</div>
+<div class="row">
+    EditAttributes:
+    <h1 @Html.EditAttributes(x => x.CurrentPage.Intro)>
+        @Model.CurrentPage.Intro.ToLineBreakString()
+    </h1>
+</div>
+<div class="row">
+    PropertyFor:@Html.PropertyFor(m => m.CurrentPage.Intro)
+</div>
+<div class="row">
+    DisplayFor:@Html.DisplayFor(m => m.CurrentPage.Intro)
+</div>
+<div class="row">
+    <h1>@Html.PropertyFor(x => x.CurrentPage.Intro, new { tag = "LineBreaked" })</h1>
+</div>
+
+====UIHint end================================================================================================
 <div class="row" >
     <div class="span8">
         @using (Html.BeginForm(null, null, null, EPiServer.Editor.PageEditing.PageIsInEditMode ? FormMethod.Post : FormMethod.Get))
@@ -33,8 +70,52 @@
                         <hr/>
                     </div>
                 }
+
+                @for (var i=0;i<10;i++)
+                {
+                    <div class="listResult">
+                        <h3>
+                            <a>
+                                @i search
+                            </a>
+                        </h3>
+                        <p>
+                            @i content
+                        </p>
+                        <hr />
+                    </div>
+                }
             </div>
             </div>
         }
+
+       
+            <div class="row">
+                <div class="span8 grayHead">
+                    <h2> Search results</h2>
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="span8 SearchResults">
+                   
+                    @for (var i = 0; i < 10; i++)
+                    {
+                        <div class="listResult">
+                            <h3>
+                                <a>
+                                    @i search
+                                </a>
+                            </h3>
+                            <p>
+                                @i content
+                            </p>
+                            <hr />
+                        </div>
+                    }
+                </div>
+            </div>
+       
     </div>
 </div>    
+    

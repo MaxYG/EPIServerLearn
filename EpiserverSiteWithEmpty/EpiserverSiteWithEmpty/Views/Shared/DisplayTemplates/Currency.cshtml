@@ -1,0 +1,12 @@
+﻿@using System.Globalization
+
+@model string
+
+
+@{
+    var formatProvider_en = new CultureInfo("en-US");
+    var formatProvider_cn = new CultureInfo("zh-CN");
+    var intMoney = int.Parse(@Model);
+    <span class="currency">@intMoney.ToString("C", formatProvider_en)</span>
+    <span class="currency">@intMoney.ToString("C", formatProvider_cn)</span>
+}

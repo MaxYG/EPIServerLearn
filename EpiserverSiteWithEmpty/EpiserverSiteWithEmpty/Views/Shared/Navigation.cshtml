@@ -10,15 +10,6 @@
     var childPages = contentRepository.GetChildren<PageData>(ContentReference.StartPage);
 }
 
-@*<b>@Html.PageLink(ContentReference.StartPage)</b>
-
-@foreach (var page in childPages)
-{
-    <b>
-        @Html.PageLink(page)
-    </b>
-}*@
-
 <div class="alloyMenu">
     <div class="navbar">
         <div class="navbar-inner">

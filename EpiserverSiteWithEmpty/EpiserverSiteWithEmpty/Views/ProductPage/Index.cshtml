@@ -21,6 +21,8 @@
 @Html.DisplayFor(x => x.CurrentPage.MainBody)
 @Html.PropertyFor(x=>x.CurrentPage.MainContentArea,new {CssClass="border",tag="span8"})
 
+
+
 @section RelatedContent{
     defined related content for product page
     <div @Html.EditAttributes(x => x.CurrentPage.PageImage)>

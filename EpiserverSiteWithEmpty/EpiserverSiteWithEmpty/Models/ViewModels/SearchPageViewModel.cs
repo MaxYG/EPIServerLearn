@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 using EpiserverSiteWithEmpty.Models.Pages;
+using EPiServer.Framework.DataAnnotations;
 using EPiServer.Globalization;
 using EPiServer.Search;
 
@@ -29,5 +33,8 @@ namespace EpiserverSiteWithEmpty.Models.ViewModels
                     .ToList();
             SearchResult.AddRange(fieldQueryResult);
         }
+
+        
     }
+    
 }
