@@ -266,6 +266,7 @@
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\ListingBlock.cs" />
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
+    <Compile Include="Models\Learning\DynamicDataStore\DDS_StoreReMapping.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\FAQItem.cs" />
