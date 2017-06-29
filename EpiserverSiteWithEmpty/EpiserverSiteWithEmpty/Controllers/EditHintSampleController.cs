@@ -19,15 +19,6 @@ namespace EpiserverSiteWithEmpty.Controllers
                 ShowBanner = currentPage.ShowBanner,
             };
             
-            /*var model = new EditSamplePageViewModel
-            {
-                Heading = editSamplePageModel.CurrentPage.MyText,
-                Body = currentPage.MainBody,
-                SecondaryBody = currentPage.SecondaryBody,
-                BannerUrl = currentPage.BannerUrl.ToString(),
-                ShowBanner = currentPage.ShowBanner,
-            };*/
-
             var editingHints = ViewData.GetEditHints<EditSamplePageViewModel, EditSamplePage>();
             editingHints.AddConnection(m => m.Heading, p => p.MyText);
 
@@ -35,9 +26,5 @@ namespace EpiserverSiteWithEmpty.Controllers
 
             return View(model);
         }
-
-       
     }
-
-   
 }

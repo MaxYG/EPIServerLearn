@@ -1,0 +1,73 @@
+﻿
+
+@model EpiserverSiteWithEmpty.Models.ViewModels.DdsViewModel
+Dynamic data store
+
+<br/>
+
+1.Remapping using StoreDefinition class <br/>
+old property count:@Model.StoreReMappingViewModel.OldPropertyCount <br />
+old property names:@Model.StoreReMappingViewModel.OldPropertyNames <br />
+old property types:@Model.StoreReMappingViewModel.OldPropertyTypes <br />
+<br />
+add new property:<br />
+new property count:@Model.StoreReMappingViewModel.NewPropertyCount <br />
+new property names:@Model.StoreReMappingViewModel.NewPropertyNames <br />
+new property types:@Model.StoreReMappingViewModel.NewPropertyTypes <br />
+<br />
+rename property <br/>
+rename property count:@Model.StoreReMappingViewModel.RenamePropertyCount <br />
+rename property names:@Model.StoreReMappingViewModel.RenamePropertyNames <br />
+rename property types:@Model.StoreReMappingViewModel.RenamePropertyTypes <br/>
+<br />
+rename property type<br />
+rename property Type count:@Model.StoreReMappingViewModel.RenameTypePropertyCount <br />
+rename property Type names:@Model.StoreReMappingViewModel.RenameTypePropertyNames <br />
+rename property Type types:@Model.StoreReMappingViewModel.RenameTypePropertyTypes <br />
+
+<br />
+Set property B value:@Model.StoreReMappingViewModel.PropertyBValue<br />
+
+<br />
+Convert property type error:@Model.StoreReMappingViewModel.ConvertTypeError<br />
+
+<br /><br />
+2. UsingGlobalTypeToStoreMapping and UsingLocalTypeToStoreMapping classes <br />
+UsingGlobalTypeToStoreMapping person:<br/>
+@foreach (var person in Model.UsingGlobalTypeToStoreMappingViewModel)
+{
+    <div>@person.FirstName @("   ") @person.LastName</div>
+}
+address:<br />
+@foreach (var address in Model.UsingGlobalTypeToStoreMappingAddressViewModel)
+{
+    <div>@address.Line1 @("   ") @address.City</div>
+}
+<br />
+UsingLocalTypeToStoreMapping executive:<br />
+@foreach (var person in Model.UsingLocalTypeToStoreMappingExecutiveViewModel)
+{
+    <div>@person.FirstName @("   ") @person.LastName</div>
+}
+employee:<br />
+@foreach (var person in Model.UsingLocalTypeToStoreMappingEmployeeViewModel)
+{
+    <div>@person.FirstName @("   ") @person.LastName</div>
+}
+address:@Model.UsingLocalTypeToStoreMappingAddressViewModel<br />
+@*@foreach (var address in Model.UsingLocalTypeToStoreMappingAddressViewModel)
+{
+    <div>@address.Line1 @("   ") @address.City</div>
+}*@
+
+<br />
+Mapping stores to custom big tables: UsingGlobalStoreToTableMapping<br/>
+var provider = DataStoreProvider.CreateInstance();<br/>
+<div>(DbDataStoreProvider)provider).<span style="color: red">CreateCommand()</span></div>
+    
+@*@foreach (var person in Model.UsingGlobalStoreToTableMappingViewModel)
+{
+    <div>@person.FirstName @("   ") @person.LastName</div>
+}*@
+
+
