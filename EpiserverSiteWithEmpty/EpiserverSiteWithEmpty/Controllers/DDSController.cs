@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web.Mvc;
 using EpiserverSiteWithEmpty.Models.Learning.DynamicDataStore;
 using EpiserverSiteWithEmpty.Models.ViewModels;
@@ -9,6 +10,7 @@ using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 using EPiServer.Data.Dynamic.Providers;
 using EPiServer.Data.Dynamic.Providers.Internal;
+using EPiServer.Web.Internal;
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
@@ -21,8 +23,124 @@ namespace EpiserverSiteWithEmpty.Controllers
             SetGlobalTypeToStoreMappingViewModel(model);
             SetUsingLocalTypeToStoreMappingViewModel(model);
             //UsingGlobalStoreToTableMapping(model);
+            ImplicitDynamicMapping(model);
+            ExplicitDynamicMapping(model);
+            MappingWithTypeHandlerDemo(model);
+            MappingWithDataContractViewModel(model);
+            MappingWithEPiServerDataContractViewModel(model);
 
             return View("/Views/Learning/Dds/Index.cshtml", model);
+        }
+
+        private void MappingWithEPiServerDataContractViewModel(DdsViewModel model)
+        {
+            var p = new PersonWithEPiServerDataContract()
+            {
+                FirstName = "Tom",
+                LastName = "Gang",
+                DateOfBirth = new DateTime(2017, 06, 29),
+                Gender = 'm',
+
+            };
+            DynamicDataStoreFactory.Instance.DeleteStore("epiDataContract_people", true);
+            var store = DynamicDataStoreFactory.Instance.CreateStore("epiDataContract_people", typeof(PersonWithEPiServerDataContract));
+
+            Identity id = store.Save(p);
+            var loadedPerson = store.Load<PersonWithEPiServerDataContract>(id);
+            model.MappingWithEpiDataContractValue = loadedPerson.FirstName + "   " + loadedPerson.LastName + "   "
+                                          + loadedPerson.DateOfBirth + "   " + loadedPerson.Gender;
+        }
+
+        private void MappingWithDataContractViewModel(DdsViewModel model)
+        {
+            var p = new PersonWithDataContract()
+            {
+                FirstName = "Tom",
+                LastName = "Gang",
+                DateOfBirth = new DateTime(2017, 06, 29),
+                Gender = 'm',
+                
+            };
+            DynamicDataStoreFactory.Instance.DeleteStore("datacontract_people", true);
+            var store = DynamicDataStoreFactory.Instance.CreateStore("datacontract_people", typeof(PersonWithDataContract));
+
+            Identity id = store.Save(p);
+            var loadedPerson = store.Load<PersonWithDataContract>(id);
+            model.MappingWithDataContractValue = loadedPerson.FirstName + "   " + loadedPerson.LastName + "   "
+                                          + loadedPerson.DateOfBirth + "   " + loadedPerson.Gender;
+        }
+
+        private void MappingWithTypeHandlerDemo(DdsViewModel model)
+        {
+            var p = new PersonWithTypeHandler()
+            {
+                FirstName = "Tom",
+                LastName = "Gang",
+                DateOfBirth = new DateTime(2017,06,29),
+                Gender = 'm',
+                WebSite = new Uri("http://www.bing.com")
+            };
+
+            DynamicDataStoreFactory.Instance.DeleteStore("TypeHandler_People", true);
+            GlobalTypeHandlers.Instance.Remove(typeof(Uri));
+            GlobalTypeHandlers.Instance.Add(typeof (Uri), new UriTypeHandler());
+            var store = DynamicDataStoreFactory.Instance.CreateStore("TypeHandler_People", typeof (PersonWithTypeHandler));
+            Identity id = store.Save(p);
+            var loadedPerson = store.Load<PersonWithTypeHandler>(id);
+            model.TypeHanderMappingValue = loadedPerson.FirstName + "   " + loadedPerson.LastName + "   " 
+                                           + loadedPerson.DateOfBirth + "   " + loadedPerson.Gender + "   " 
+                                           + loadedPerson.WebSite;
+            GlobalTypeHandlers.Instance.Remove(typeof(Uri));
+            var loadedPerson1 = store.Load<PersonWithTypeHandler>(id);
+            model.TypeHanderMappingValue1 = loadedPerson1.FirstName + "   " + loadedPerson1.LastName + "   "
+                                           + loadedPerson1.DateOfBirth + "   " + loadedPerson1.Gender + "   "
+                                           + loadedPerson1.WebSite;
+        }
+
+        private void ExplicitDynamicMapping(DdsViewModel model)
+        {
+            var storeMappings=new Dictionary<string,Type>();
+            storeMappings.Add("FirstName", typeof(string));
+            storeMappings.Add("LastName", typeof(string));
+            storeMappings.Add("DateOfBirth", typeof(DateTime));
+            storeMappings.Add("Gender", typeof(char));
+            DynamicDataStoreFactory.Instance.DeleteStore("Explicit_people",true);
+            var store = DynamicDataStoreFactory.Instance.CreateStore("Explicit_people", storeMappings);
+            var pb = new PropertyBag();
+            pb.Add("FirstName", "Tom1");
+            pb.Add("LastName", "Gang1");
+            pb.Add("Gender", "1");
+            store.Save(pb);
+
+            var pb2 = new PropertyBag();
+            pb2.Add("FirstName", "Tom2");
+            pb2.Add("LastName", "Gang2");
+            pb2.Add("Gender", "2");
+            pb2.Add("DateOfBirth", new DateTime(1953, 01, 16));
+            store.Save(pb2);
+
+            foreach (var bag in store.ItemsAsPropertyBag())
+            {
+                model.ExplicitDynamicMappingValue += bag["FirstName"] + "  " + bag["LastName"]
+                     + "  " + bag["DateOfBirth"] + "  " + bag["Gender"]+";   ";
+            }
+        }
+
+        private void ImplicitDynamicMapping(DdsViewModel model)
+        {
+            PropertyBag pb=new PropertyBag();
+            pb.Add("FirstName","Tom");
+            pb.Add("LastName","Gang");
+            pb.Add("Gender","m");
+            DynamicDataStoreFactory.Instance.DeleteStore("Implicit_People",true);
+            var store = DynamicDataStoreFactory.Instance.CreateStore("Implicit_People", pb.GenerateTypeBag());
+            store.Save(pb);
+         
+            foreach (var bag in store.ItemsAsPropertyBag())
+            {
+                model.ImplicitDynamicMappingValue += bag["FirstName"] +"  "+ bag["LastName"] 
+                     + "  " + bag["Gender"];
+            }
         }
 
         private void UsingGlobalStoreToTableMapping(DdsViewModel model)
@@ -271,6 +389,69 @@ namespace EpiserverSiteWithEmpty.Controllers
                 model.StoreReMappingViewModel.ConvertTypeError = e.Message;
             }
         }
+    }
+
+    /// <summary>
+    /// Class with different serialization patterns for DataContract consumers (e.g. Windows Communication Found (WCF))
+    /// and Dynamic Data Store
+    /// </summary>
+    [DataContract]
+    [EPiServerDataContract]
+    public class PersonWithEPiServerDataContract
+    {
+        /// <summary>
+        /// Serialize this with Windows Communication Found (WCF)
+        /// and to Dynamic Data Store
+        /// </summary>
+        [DataMember]
+        [EPiServerDataMember]
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Serialize this with Windows Communication Found (WCF)
+        /// and to Dynamic Data Store
+        /// </summary>
+        [DataMember]
+        [EPiServerDataMember]
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// Serialize this with Windows Communication Found (WCF)
+        /// but NOT to Dynamic Data Store
+        /// </summary>
+        [DataMember]
+        [EPiServerDataMember]
+        public DateTime DateOfBirth { get; set; }
+
+        /// <summary>
+        /// Don't map this!!
+        /// </summary>
+        [DataMember]
+        public char Gender { get; set; }
+    }
+
+    [DataContract]
+    class PersonWithDataContract
+    {
+        [DataMember]
+        public string FirstName { get; set; }
+        [DataMember]
+        public string LastName { get; set; }
+        [DataMember]
+        public DateTime DateOfBirth { get; set; }
+
+        // Don't map this!!
+        //[DataMember]
+        public char Gender { get; set; }
+    }
+
+    public class PersonWithTypeHandler
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public char Gender { get; set; }
+        public Uri WebSite { get; set; }
     }
 
     public class CustomBigTable

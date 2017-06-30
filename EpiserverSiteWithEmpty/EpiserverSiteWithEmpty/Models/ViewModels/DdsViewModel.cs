@@ -20,6 +20,12 @@ namespace EpiserverSiteWithEmpty.Models.ViewModels
         public List<Person> UsingLocalTypeToStoreMappingEmployeeViewModel { get; set; }
         public string UsingLocalTypeToStoreMappingAddressViewModel { get; set; }
         public List<Person> UsingGlobalStoreToTableMappingViewModel { get; set; }
+        public  string ImplicitDynamicMappingValue { get; set; }
+        public string ExplicitDynamicMappingValue { get; set; }
+        public string TypeHanderMappingValue { get; set; }
+        public string TypeHanderMappingValue1 { get; set; }
+        public string MappingWithDataContractValue { get; set; }
+        public string MappingWithEpiDataContractValue { get; set; }
 
         public class StoreReMappingView
         {

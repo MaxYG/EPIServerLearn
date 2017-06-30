@@ -3,6 +3,21 @@
 @model EpiserverSiteWithEmpty.Models.ViewModels.DdsViewModel
 Dynamic data store
 
+<br />
+MappingWithEPiServerDataContract  : @Model.MappingWithEpiDataContractValue<br />
+
+<br />
+MappingWithDatacontract : @Model.MappingWithDataContractValue<br/>
+
+<br />
+MappingWithTypeHandler : @Model.TypeHanderMappingValue<br />
+MappingWithTypeHandler1 : @Model.TypeHanderMappingValue1<br />
+
+
+<br />
+ImplicitDynamicMapping: @Model.ImplicitDynamicMappingValue<br/>
+ExplicitDynamicMapping:  @Model.ExplicitDynamicMappingValue<br />
+
 <br/>
 
 1.Remapping using StoreDefinition class <br/>
@@ -69,5 +84,6 @@ var provider = DataStoreProvider.CreateInstance();<br/>
 {
     <div>@person.FirstName @("   ") @person.LastName</div>
 }*@
+
 
 
