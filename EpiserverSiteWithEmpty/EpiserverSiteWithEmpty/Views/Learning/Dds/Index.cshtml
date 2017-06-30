@@ -3,6 +3,35 @@
 @model EpiserverSiteWithEmpty.Models.ViewModels.DdsViewModel
 Dynamic data store
 
+
+<br />
+UsingImplicitIdentity : <br/>
+Id:@Model.UsingImplicitIdentityId &nbsp;&nbsp;&nbsp; Id2:@Model.UsingImplicitIdentityId2 &nbsp;&nbsp;&nbsp; isSame:@Model.UsingImplicitIdentityCompareId<br/>
+@foreach (var person in Model.UsingImplicitIdentityValues)
+{
+    <div>@person.FirstName @("   ") @person.LastName</div>
+}
+
+<br />
+UsingIndexes : @Model.UsingIndexexValue<br />
+
+
+<br />
+UsingFind : <br/>
+@foreach (var person in Model.FindPersons)
+{
+    <div>@person.FirstName @("   ") @person.LastName</div>
+}
+
+<br />
+LoadSavePropertyBag1  : @Model.LoadedSavePropertyBagValue<br />
+LoadSavePropertyBag2  : @Model.LoadedSavePropertyBagValue2<br/>
+
+<br />
+LoadSaveType1  : @Model.LoadedSaveTypeValue<br/>
+LoadSaveType2 PropertyBag  : @Model.LoadedSaveTypeOfPropertyBagValue<br/>
+
+
 <br />
 MappingWithEPiServerDataContract  : @Model.MappingWithEpiDataContractValue<br />
 

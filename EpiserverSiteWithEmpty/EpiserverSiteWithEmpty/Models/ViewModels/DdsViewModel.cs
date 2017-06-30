@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using EpiserverSiteWithEmpty.Models.Learning.DynamicDataStore;
+using EPiServer.Data.Dynamic;
 
 namespace EpiserverSiteWithEmpty.Models.ViewModels
 {
@@ -26,6 +27,16 @@ namespace EpiserverSiteWithEmpty.Models.ViewModels
         public string TypeHanderMappingValue1 { get; set; }
         public string MappingWithDataContractValue { get; set; }
         public string MappingWithEpiDataContractValue { get; set; }
+        public string LoadedSaveTypeValue { get; set; }
+        public string LoadedSaveTypeOfPropertyBagValue { get; set; }
+        public string LoadedSavePropertyBagValue { get; set; }
+        public string LoadedSavePropertyBagValue2 { get; set; }
+        public IEnumerable<Person> FindPersons { get; set; }
+        public string UsingIndexexValue { get; set; }
+        public bool UsingImplicitIdentityCompareId { get; set; }
+        public string UsingImplicitIdentityId { get; set; }
+        public string UsingImplicitIdentityId2 { get; set; }
+        public List<Person> UsingImplicitIdentityValues { get; set; }
 
         public class StoreReMappingView
         {
@@ -72,6 +83,7 @@ namespace EpiserverSiteWithEmpty.Models.ViewModels
             set;
         }
 
+        
         public string LastName
         {
             get;

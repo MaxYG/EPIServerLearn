@@ -28,8 +28,106 @@ namespace EpiserverSiteWithEmpty.Controllers
             MappingWithTypeHandlerDemo(model);
             MappingWithDataContractViewModel(model);
             MappingWithEPiServerDataContractViewModel(model);
+            LoadSaveTypeViewModel(model);
+            LoadSavePropertyBagViewModel(model);
+            UsingFind(model);
+            UsingIndexes(model);
+            UsingImplicitIdentity(model);
 
             return View("/Views/Learning/Dds/Index.cshtml", model);
+        }
+
+        private void UsingImplicitIdentity(DdsViewModel model)
+        {
+            var p = new Person()
+            {
+                FirstName = "Tom",
+                LastName = "Gang",
+                DateOfBirth = new DateTime(2017, 06, 29,08,08,08),
+
+            };
+            DynamicDataStoreFactory.Instance.DeleteStore("UsingImplicitIdentity_People", true);
+         
+            var store = DynamicDataStoreFactory.Instance.CreateStore("UsingImplicitIdentity_People", typeof(Person));
+            var id=store.Save(p);
+            p.LastName = "Yang";
+            var id2 = store.Save(p);
+
+            model.UsingImplicitIdentityId = id.ToString();
+            model.UsingImplicitIdentityId2 = id2.ToString();
+            model.UsingImplicitIdentityCompareId = id==id2;
+
+            //var loadedPerson = (from person in store.Items<Person>() where person.LastName == "Adams" select person).FirstOrDefault();
+            var loadedPerson = store.Items<Person>().Where(x=>x.LastName== "Yang").FirstOrDefault();
+            loadedPerson.FirstName = "Jeff";
+            var store2 = DynamicDataStoreFactory.Instance.GetStore("UsingImplicitIdentity_People");
+            store2.Save(loadedPerson);
+            var persons = store2.Items<Person>().ToList();
+            model.UsingImplicitIdentityValues = persons;
+        }
+        private void UsingIndexes(DdsViewModel model)
+        {
+            var p = new Person()
+            {
+                FirstName = "Tom",
+                LastName = "Gang",
+                DateOfBirth = new DateTime(2017, 06, 29),
+
+            };
+            DynamicDataStoreFactory.Instance.DeleteStore("UsingIndex_People",true);
+            StoreDefinitionParameters parameters = new StoreDefinitionParameters();
+            parameters.IndexNames.Add("LastName");         
+            var store = DynamicDataStoreFactory.Instance.CreateStore("UsingIndex_People", typeof(Person));
+            store.Save(p);
+            var mapping=store.StoreDefinition.GetMapping("LastName") as InlinePropertyMap;
+            model.UsingIndexexValue = mapping.ColumnInfo.Name.ToLower();
+
+        }
+        private void UsingFind(DdsViewModel model)
+        {
+            var store = DynamicDataStoreFactory.Instance.GetStore("LoadSavePropertyBag_people");
+            var persons = store.Find<Person>("FirstName", "Tom");
+            model.FindPersons = persons;
+        }
+
+        private void LoadSavePropertyBagViewModel(DdsViewModel model)
+        {
+            var pb = new PropertyBag();
+            pb.Add("FirstName", "Tom");
+            pb.Add("LastName", "Gang");
+            pb.Add("DateOfBirth", new DateTime(2017, 06, 30));
+            DynamicDataStoreFactory.Instance.DeleteStore("LoadSavePropertyBag_people",true);
+            var store = DynamicDataStoreFactory.Instance.CreateStore("LoadSavePropertyBag_people", pb.GenerateTypeBag());
+            var id=store.Save(pb);
+
+            var pb2 = store.LoadAsPropertyBag(id);
+            model.LoadedSavePropertyBagValue = pb2["FirstName"] + "   " + pb2["LastName"] + "   "
+                                          + pb2["DateOfBirth"];
+
+            var people = store.Load<Person>(id);
+            model.LoadedSavePropertyBagValue2 = people.FirstName + "   " + people.LastName + "   "
+                                          + people.DateOfBirth;
+        }
+
+        private void LoadSaveTypeViewModel(DdsViewModel model)
+        {
+            var p = new Person()
+            {
+                FirstName = "Tom",
+                LastName = "Gang",
+                DateOfBirth = new DateTime(2017, 06, 29),
+                
+            };
+            var store = DynamicDataStoreFactory.Instance.CreateStore("LoadSaveType_people", typeof (Person));
+            var id = store.Save(p);
+            var loadedPerson = store.Load<Person>(id);
+            model.LoadedSaveTypeValue = loadedPerson.FirstName + "   " + loadedPerson.LastName + "   "
+                                          + loadedPerson.DateOfBirth ;
+
+            var pb = store.LoadAsPropertyBag(id);
+            model.LoadedSaveTypeOfPropertyBagValue = pb["FirstName"] + "   " + pb["LastName"] + "   "
+                                          + pb["DateOfBirth"];
+
         }
 
         private void MappingWithEPiServerDataContractViewModel(DdsViewModel model)
