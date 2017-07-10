@@ -258,6 +258,8 @@
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Controllers\TeaserBlockController.cs" />
+    <Compile Include="Controllers\TinyMceController.cs" />
+    <Compile Include="Learning\ContentProvider\CustomContentProvider.cs" />
     <Compile Include="Learning\CustomProperty\SimpleTinyMCESettings.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,11 +267,13 @@
     <Compile Include="Helpers\CategorizableExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Learning\Comments\CustomComponent.cs" />
+    <Compile Include="Learning\logging\EPILogging.cs" />
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\ListingBlock.cs" />
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
     <Compile Include="Models\Learning\DynamicDataStore\DDS.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
+    <Compile Include="Models\Learning\TinyMCE\LearningTinyMcePage.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\FAQItem.cs" />
     <Compile Include="Models\Pages\FAQPage.cs" />
@@ -307,7 +311,9 @@
   <ItemGroup>
     <Content Include="ClientResources\iPhone4\device-320x480.png" />
     <Content Include="ClientResources\iPhone4\iPhone4.css" />
+    <Content Include="lang\translations.xml" />
     <Content Include="Plugins\DebugPlugin.aspx" />
+    <Content Include="Resources\LanguageFiles\translations.xml" />
     <Content Include="Resources\LanguageFiles\Views.xml" />
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />
@@ -355,6 +361,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\GeoLiteCity.dat" />
+    <Content Include="App_Data\Modules\EPiServer.TinyMCESpellChecker\Dictionaries\en-US\en-US.aff" />
+    <Content Include="App_Data\Modules\EPiServer.TinyMCESpellChecker\Dictionaries\en-US\en-US.dic" />
     <None Include="EPiServerLog.config" />
     <Content Include="packages.config" />
     <Content Include="modules\_protected\Shell\web.config" />
@@ -393,6 +401,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ChangeColorForMe.cshtml" />
     <Content Include="Views\GedgetLearningPage\Index.cshtml" />
     <Content Include="Views\Learning\Dds\Index.cshtml" />
+    <Content Include="Views\Learning\TinyMce\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

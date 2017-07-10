@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<languages>
+
+  <language name="svenska" id="sv">
+    <editorstyleoptions>
+      <style1>Stil 1</style1>
+      <style2>Stil 2</style2>
+      <heading_styles>Rubrikstilar</heading_styles>
+      <heading_1>Rubrik 1</heading_1>
+      <heading_2>Rubrik 2</heading_2>
+    </editorstyleoptions>
+  
+  </language>
+
+</languages>
