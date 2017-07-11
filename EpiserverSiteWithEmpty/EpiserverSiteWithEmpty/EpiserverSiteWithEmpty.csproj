@@ -248,6 +248,7 @@
     <Compile Include="Controllers\FAQPageController.cs" />
     <Compile Include="Controllers\GedgetLearningPageController.cs" />
     <Compile Include="Controllers\ListingBlockController.cs" />
+    <Compile Include="Controllers\LoggingDemoController.cs" />
     <Compile Include="Controllers\NewsPageController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\PagePartialController.cs" />
@@ -273,6 +274,7 @@
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
     <Compile Include="Models\Learning\DynamicDataStore\DDS.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
+    <Compile Include="Models\Learning\Logging\LoggingDemo.cs" />
     <Compile Include="Models\Learning\TinyMCE\LearningTinyMcePage.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\FAQItem.cs" />
@@ -363,7 +365,6 @@
     <Content Include="App_Data\GeoLiteCity.dat" />
     <Content Include="App_Data\Modules\EPiServer.TinyMCESpellChecker\Dictionaries\en-US\en-US.aff" />
     <Content Include="App_Data\Modules\EPiServer.TinyMCESpellChecker\Dictionaries\en-US\en-US.dic" />
-    <None Include="EPiServerLog.config" />
     <Content Include="packages.config" />
     <Content Include="modules\_protected\Shell\web.config" />
     <Content Include="modules\_protected\Shell\Shell.zip" />
@@ -402,6 +403,10 @@
     <Content Include="Views\GedgetLearningPage\Index.cshtml" />
     <Content Include="Views\Learning\Dds\Index.cshtml" />
     <Content Include="Views\Learning\TinyMce\Index.cshtml" />
+    <Content Include="Views\Learning\Logging\Index.cshtml" />
+    <Content Include="EPiServerLog.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

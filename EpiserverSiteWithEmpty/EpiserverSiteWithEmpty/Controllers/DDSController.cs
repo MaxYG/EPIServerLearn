@@ -14,7 +14,6 @@ using EPiServer.Web.Internal;
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
-   
     public class DDSController :  PageControllerBase<Dds>
     {
         public ActionResult Index(Dds currentPage)
