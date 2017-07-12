@@ -177,6 +177,7 @@
       <HintPath>..\packages\structuremap.web-signed.3.1.6.191\lib\net40\StructureMap.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
@@ -253,6 +254,7 @@
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\PagePartialController.cs" />
     <Compile Include="Controllers\PagePartialWideController.cs" />
+    <Compile Include="Controllers\PersonalizationVisitorGroupsController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
     <Compile Include="Controllers\SearchPageController.cs" />
@@ -275,6 +277,9 @@
     <Compile Include="Models\Learning\DynamicDataStore\DDS.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
     <Compile Include="Models\Learning\Logging\LoggingDemo.cs" />
+    <Compile Include="Models\Learning\Personalization\PersonalizationClasss.cs" />
+    <Compile Include="Models\Learning\Personalization\PersonalizationVisitorGroups.cs" />
+    <Compile Include="Models\Learning\Personalization\YourCriterionClass.cs" />
     <Compile Include="Models\Learning\TinyMCE\LearningTinyMcePage.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\FAQItem.cs" />
@@ -295,6 +300,8 @@
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ListingBlockModel.cs" />
     <Compile Include="Models\ViewModels\SearchPageViewModel.cs" />
+    <Compile Include="Personalization\Criteria\CookieExists\CookieExistsCriterion.cs" />
+    <Compile Include="Personalization\Criteria\CookieExists\CookieExistsCriterionSettings.cs" />
     <Compile Include="Plugins\DebugPlugin.aspx.cs">
       <DependentUpon>DebugPlugin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -305,6 +312,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Learning\EditHint\EditSampleBlock.cs" />
     <Compile Include="Models\Learning\EditHint\EditSamplePage.cs" />
+    <Compile Include="Views\Shared\EditorTemplates\Criterion1.cs" />
+    <Compile Include="Views\Shared\EditorTemplates\Criterion1Model.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Properties\" />
@@ -357,6 +366,8 @@
     <Content Include="Static\jwplayer\player.swf" />
     <Content Include="Static\jwplayer\preview.jpg" />
     <Content Include="Static\jwplayer\video.mp4" />
+    <Content Include="Views\Shared\EditorTemplates\Criterion1.js" />
+    <Content Include="Views\Shared\EditorTemplates\Views\Shared\EditorTemplates\Criterion1Model.ascx" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -407,6 +418,7 @@
     <Content Include="EPiServerLog.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Learning\PersonalizationVisitorGroups\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
