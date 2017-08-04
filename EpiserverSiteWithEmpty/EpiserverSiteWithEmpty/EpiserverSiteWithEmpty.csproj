@@ -244,6 +244,7 @@
     <Compile Include="Business\ExtensionMethods.cs" />
     <Compile Include="Commons\EpiProvider.cs" />
     <Compile Include="Commons\RoleEnum.cs" />
+    <Compile Include="Controllers\AdminInterfaceController.cs" />
     <Compile Include="Controllers\DDSController.cs" />
     <Compile Include="Controllers\EditHintSampleController.cs" />
     <Compile Include="Controllers\FAQPageController.cs" />
@@ -257,6 +258,7 @@
     <Compile Include="Controllers\PersonalizationVisitorGroupsController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
+    <Compile Include="Controllers\SchedulePingPangController.cs" />
     <Compile Include="Controllers\SearchPageController.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
@@ -274,12 +276,16 @@
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\ListingBlock.cs" />
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
+    <Compile Include="Models\Learning\AdminInterface\AdminInterface.cs" />
+    <Compile Include="Models\Learning\AdminInterface\CustomVirtualProvider2.cs" />
+    <Compile Include="Models\Learning\AdminInterface\VirtualRoleInitializer.cs" />
     <Compile Include="Models\Learning\DynamicDataStore\DDS.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
     <Compile Include="Models\Learning\Logging\LoggingDemo.cs" />
     <Compile Include="Models\Learning\Personalization\PersonalizationClasss.cs" />
     <Compile Include="Models\Learning\Personalization\PersonalizationVisitorGroups.cs" />
     <Compile Include="Models\Learning\Personalization\YourCriterionClass.cs" />
+    <Compile Include="Models\Learning\PingPang\SchedulePingPang.cs" />
     <Compile Include="Models\Learning\TinyMCE\LearningTinyMcePage.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Pages\FAQItem.cs" />
@@ -317,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Properties\" />
+    <Folder Include="Views\AdminInterface\" />
     <Folder Include="Views\PagePartialWide\" />
   </ItemGroup>
   <ItemGroup>
@@ -419,6 +426,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Learning\PersonalizationVisitorGroups\Index.cshtml" />
+    <Content Include="Views\Learning\AdminInterface\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

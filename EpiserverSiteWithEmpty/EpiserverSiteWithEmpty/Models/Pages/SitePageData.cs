@@ -12,7 +12,9 @@ namespace EpiserverSiteWithEmpty.Models.Pages
 {
     public abstract class SitePageData:PageData
     {
-        
+        [Display(GroupName = "TestTab", Order = 100)]
+        public virtual string AddTabFromConfig { get; set; }
+
         [Display(GroupName = "SEO",Order = 100)]
         public virtual string MetaTitle { get; set; }
 
