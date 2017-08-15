@@ -12,4 +12,12 @@
     @Html.PropertyFor(x=>x.CurrentPage.TinyMcexxx)
 
     @Html.PropertyFor(x=>x.CurrentPage.CustomPropertySidebar)
+
+    <br/>
+    有三处可以进行设置<br/>
+    1.admin-->config-->property configuration-->edit custom property types, 在这个下面查找XHTML string (>255)(点击进入)
+    添加设置<br/>
+    2.在代码中定义，在TinyMceController下看。<br/>
+    3.admin-->Content type-->LearningTinyMcePage(自己定义的pagetype),添加属性
+
 </div>
