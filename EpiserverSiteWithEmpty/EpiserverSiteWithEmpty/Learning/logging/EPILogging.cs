@@ -12,9 +12,6 @@ namespace EpiserverSiteWithEmpty.Learning.logging
         public static void LoggingMessage(string message)
         {
             Logger.Info("episerver Log message:" + message);
-            Logger.Debug("episerver error message:"+message);
-            Logger.Debug("episerver error message:" + new Exception());
-            
         }
     }
 }
