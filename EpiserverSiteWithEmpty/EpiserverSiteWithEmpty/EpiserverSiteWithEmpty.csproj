@@ -177,6 +177,7 @@
       <HintPath>..\packages\structuremap.web-signed.3.1.6.191\lib\net40\StructureMap.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="sysglobl" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -249,6 +250,7 @@
     <Compile Include="Controllers\EditHintSampleController.cs" />
     <Compile Include="Controllers\FAQPageController.cs" />
     <Compile Include="Controllers\GedgetLearningPageController.cs" />
+    <Compile Include="Controllers\GlobalizationScenarioController.cs" />
     <Compile Include="Controllers\ListingBlockController.cs" />
     <Compile Include="Controllers\LoggingDemoController.cs" />
     <Compile Include="Controllers\NewsPageController.cs" />
@@ -281,6 +283,7 @@
     <Compile Include="Models\Learning\AdminInterface\VirtualRoleInitializer.cs" />
     <Compile Include="Models\Learning\DynamicDataStore\DDS.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
+    <Compile Include="Models\Learning\GlobalizationScenario\GlobalizationScenario.cs" />
     <Compile Include="Models\Learning\Logging\LoggingDemo.cs" />
     <Compile Include="Models\Learning\Personalization\PersonalizationClasss.cs" />
     <Compile Include="Models\Learning\Personalization\PersonalizationVisitorGroups.cs" />
@@ -323,12 +326,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Properties\" />
-    <Folder Include="Views\AdminInterface\" />
+    <Folder Include="Views\GlobalizationScenario\" />
     <Folder Include="Views\PagePartialWide\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\iPhone4\device-320x480.png" />
     <Content Include="ClientResources\iPhone4\iPhone4.css" />
+    <Content Include="languagesDemo.xml" />
     <Content Include="lang\translations.xml" />
     <Content Include="Plugins\DebugPlugin.aspx" />
     <Content Include="Resources\LanguageFiles\translations.xml" />
@@ -427,6 +431,7 @@
     </Content>
     <Content Include="Views\Learning\PersonalizationVisitorGroups\Index.cshtml" />
     <Content Include="Views\Learning\AdminInterface\Index.cshtml" />
+    <Content Include="Views\Learning\GlobalizationScenario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

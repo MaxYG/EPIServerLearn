@@ -1,0 +1,10 @@
+﻿
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="xxx" id="11">
+    <mystring>很好</mystring>
+    <subnode>
+      <myotherstrin>my other string</myotherstring>
+    </subnode>
+  </language>
+</languages>

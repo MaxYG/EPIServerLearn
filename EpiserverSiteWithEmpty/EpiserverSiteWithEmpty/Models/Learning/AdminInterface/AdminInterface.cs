@@ -7,4 +7,6 @@ namespace EpiserverSiteWithEmpty.Models.Learning.AdminInterface
     public class AdminInterface:SitePageData
     {
     }
+
+    
 }
