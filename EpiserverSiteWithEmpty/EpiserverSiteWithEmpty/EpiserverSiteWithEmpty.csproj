@@ -334,8 +334,8 @@
     <Content Include="ClientResources\iPhone4\iPhone4.css" />
     <Content Include="languagesDemo.xml" />
     <Content Include="lang\translations.xml" />
+    <Content Include="MyCustomLanguageVPP\ContentTypeNames1.xml" />
     <Content Include="Plugins\DebugPlugin.aspx" />
-    <Content Include="Resources\LanguageFiles\ContentTypeNames1.xml" />
     <Content Include="Resources\LanguageFiles\Views.xml" />
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />

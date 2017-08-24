@@ -100,13 +100,13 @@ namespace EpiserverSiteWithEmpty.Controllers
     }
 
 
-    /*//virtual path
+    //virtual path
     [InitializableModule]
     //A dependency to EPiServer CMS initialization is needed to be able to use a VPP
     [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]
     public class CustomLanguageProviderInitializationWithVirtualPath : IInitializableModule
     {
-        private const string ProviderName = "CustomProviderName";
+        private const string ProviderName = "virtualLanguageFiles1";
 
         public void Initialize(InitializationEngine context)
         {
@@ -141,5 +141,5 @@ namespace EpiserverSiteWithEmpty.Controllers
         }
 
         public void Preload(string[] parameters) { }
-    }*/
+    }
 }
