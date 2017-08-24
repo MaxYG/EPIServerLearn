@@ -11,6 +11,7 @@ using EPiServer.Framework.Initialization;
 using EPiServer.Framework.Localization;
 using EPiServer.Framework.Localization.XmlResources;
 using EPiServer.ServiceLocation;
+using EPiServer.Web.Hosting;
 
 namespace EpiserverSiteWithEmpty.Controllers
 {
@@ -52,12 +53,12 @@ namespace EpiserverSiteWithEmpty.Controllers
         }
     }
 
-
+    //physical path
     [InitializableModule]
     [ModuleDependency(typeof(FrameworkInitialization))]
     public class CustomLanguageProviderInitializationWithPhysicalPath : IInitializableModule
     {
-        private const string ProviderName = "customResources";
+        private const string ProviderName = "customResources12";
         public void Initialize(InitializationEngine context)
         {
             //Casts the current LocalizationService to a ProviderBasedLocalizationService to get access to the current list of providers
@@ -82,7 +83,7 @@ namespace EpiserverSiteWithEmpty.Controllers
         public void Uninitialize(InitializationEngine context)
         {
             //Casts the current LocalizationService to a ProviderBasedLocalizationService to get access to the current list of providers
-            ProviderBasedLocalizationService localizationService = context.Locate.Advanced.GetInstance(typeof(string)) as ProviderBasedLocalizationService;
+            ProviderBasedLocalizationService localizationService = context.Locate.Advanced.GetInstance<LocalizationService>() as ProviderBasedLocalizationService;
             if (localizationService != null)
             {
                 //Gets any provider that has the same name as the one initialized.
@@ -97,4 +98,48 @@ namespace EpiserverSiteWithEmpty.Controllers
 
         public void Preload(string[] parameters) { }
     }
+
+
+    /*//virtual path
+    [InitializableModule]
+    //A dependency to EPiServer CMS initialization is needed to be able to use a VPP
+    [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]
+    public class CustomLanguageProviderInitializationWithVirtualPath : IInitializableModule
+    {
+        private const string ProviderName = "CustomProviderName";
+
+        public void Initialize(InitializationEngine context)
+        {
+            //Casts the current LocalizationService to a ProviderBasedLocalizationService to get access to the current list of providers
+            ProviderBasedLocalizationService localizationService = context.Locate.Advanced.GetInstance<LocalizationService>() as ProviderBasedLocalizationService;
+            if (localizationService != null)
+            {
+                VirtualPathXmlLocalizationProviderInitializer localizationProviderInitializer =
+                    new VirtualPathXmlLocalizationProviderInitializer(GenericHostingEnvironment.VirtualPathProvider);
+                //a VPP with the path below must be registered in the sites configuration.
+                string virtualPath = "~/MyCustomLanguageVPP/";
+                FileXmlLocalizationProvider localizationProvider = localizationProviderInitializer.GetInitializedProvider(virtualPath, ProviderName);
+                //Inserts the provider first in the provider list so that it is prioritized over default providers.
+                localizationService.Providers.Insert(0, localizationProvider);
+            }
+        }
+
+        public void Uninitialize(InitializationEngine context)
+        {
+            //Casts the current LocalizationService to a ProviderBasedLocalizationService to get access to the current list of providers
+            ProviderBasedLocalizationService localizationService = context.Locate.Advanced.GetInstance<LocalizationService>() as ProviderBasedLocalizationService;
+            if (localizationService != null)
+            {
+                //Gets any provider that has the same name as the one initialized.
+                LocalizationProvider localizationProvider = localizationService.Providers.FirstOrDefault(p => p.Name.Equals(ProviderName, StringComparison.Ordinal));
+                if (localizationProvider != null)
+                {
+                    //If found, remove it.
+                    localizationService.Providers.Remove(localizationProvider);
+                }
+            }
+        }
+
+        public void Preload(string[] parameters) { }
+    }*/
 }

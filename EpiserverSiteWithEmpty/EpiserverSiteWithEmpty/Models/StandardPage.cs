@@ -12,6 +12,7 @@ namespace EpiserverSiteWithEmpty.Models
     [ContentType(DisplayName = "StandardPage", 
         GUID = "fd197865-7d91-4a6e-9bd7-565eb6249c3b", 
         Description = "Alloy Standard page")]
+   
     public class StandardPage : SitePageData
     {
         [CultureSpecific]
@@ -34,6 +35,9 @@ namespace EpiserverSiteWithEmpty.Models
                     GroupName = SystemTabNames.Content,
                     Order = 321)]
         public virtual string Xxx { get; set; }
+
+        
+        public virtual string Name { get; set; }
 
         public void CreateNewPage(PageReference parent)
         {

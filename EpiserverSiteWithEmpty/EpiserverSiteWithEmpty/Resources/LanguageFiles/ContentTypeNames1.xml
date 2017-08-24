@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="English" id="en">
+    <contenttypes>
+      <newspage>
+        <description>A description of the page type</description>
+        <properties>
+          <maincontentareatest>
+            <caption>Name text from XML</caption>
+            <help>Description text from XML</help>
+            </maincontentareatest>
+          </properties>
+      </newspage>
+    </contenttypes>
+
+    <groups>
+      <information>Group name from XML file xxxxxx  yyy</information>
+    </groups>
+  </language>
+
+  <language id="en" name="English">
+    <contenttypes>
+      <pagedata>
+        <properties>
+          <name>
+            <caption>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</caption>
+          </name>
+        </properties>
+      </pagedata>
+    </contenttypes>
+  </language>
+  
+  <language name="Swedish" id="sv">
+   
+  </language>
+</languages>

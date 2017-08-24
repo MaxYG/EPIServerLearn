@@ -245,6 +245,7 @@
     <Compile Include="Business\ExtensionMethods.cs" />
     <Compile Include="Commons\EpiProvider.cs" />
     <Compile Include="Commons\RoleEnum.cs" />
+    <Compile Include="Commons\SystemTabNames.cs" />
     <Compile Include="Controllers\AdminInterfaceController.cs" />
     <Compile Include="Controllers\DDSController.cs" />
     <Compile Include="Controllers\EditHintSampleController.cs" />
@@ -326,7 +327,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Properties\" />
-    <Folder Include="Views\GlobalizationScenario\" />
     <Folder Include="Views\PagePartialWide\" />
   </ItemGroup>
   <ItemGroup>
@@ -335,7 +335,7 @@
     <Content Include="languagesDemo.xml" />
     <Content Include="lang\translations.xml" />
     <Content Include="Plugins\DebugPlugin.aspx" />
-    <Content Include="Resources\LanguageFiles\translations.xml" />
+    <Content Include="Resources\LanguageFiles\ContentTypeNames1.xml" />
     <Content Include="Resources\LanguageFiles\Views.xml" />
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />
