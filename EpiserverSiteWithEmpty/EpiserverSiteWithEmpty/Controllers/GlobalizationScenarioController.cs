@@ -10,6 +10,7 @@ using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.Framework.Localization;
 using EPiServer.Framework.Localization.XmlResources;
+using EPiServer.MirroringService.MirroringMonitoring;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Hosting;
 
@@ -22,7 +23,7 @@ namespace EpiserverSiteWithEmpty.Controllers
             //CreateCulture();
             var localizedString = LocalizationService.Current.AvailableLocalizations;
             //ServiceLocator.Current.GetInstance()
-
+            //MirroringMonitoringClient mom = new MirroringMonitoringClient(endPointName);
 
             var model = new DefaultPageViewModel<GlobalizationScenario>(currentPage);
             return View("/Views/Learning/GlobalizationScenario/Index.cshtml", model);
