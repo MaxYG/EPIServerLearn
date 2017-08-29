@@ -1,0 +1,17 @@
+﻿
+
+@model EpiserverSiteWithEmpty.Models.ViewModels.ConfigurationSitePageDataViewModel
+<div>
+    ElementName:@Model.ElementName <br />
+    RemoteWebServiceCulture:@Model.RemoteWebServiceCulture <br />
+
+    Configuring episerver 的配置在web.config的episerver的节点上 有：<br/>
+    < imageEditor><br/>
+    preset width="40" height="30" <br/>
+    @Model.CurrentPage.PresetImageEditor
+    < linkValidator>
+    < contentProvider>
+    < applicationSettings>
+    < tinyMCE>
+    < visitorGroup>
+</div>

@@ -247,6 +247,7 @@
     <Compile Include="Commons\RoleEnum.cs" />
     <Compile Include="Commons\SystemTabNames.cs" />
     <Compile Include="Controllers\AdminInterfaceController.cs" />
+    <Compile Include="Controllers\ConfigurationDemoController.cs" />
     <Compile Include="Controllers\DDSController.cs" />
     <Compile Include="Controllers\EditHintSampleController.cs" />
     <Compile Include="Controllers\FAQPageController.cs" />
@@ -282,6 +283,7 @@
     <Compile Include="Models\Learning\AdminInterface\AdminInterface.cs" />
     <Compile Include="Models\Learning\AdminInterface\CustomVirtualProvider2.cs" />
     <Compile Include="Models\Learning\AdminInterface\VirtualRoleInitializer.cs" />
+    <Compile Include="Models\Learning\Configurations\ConfigurationSitePageData.cs" />
     <Compile Include="Models\Learning\DynamicDataStore\DDS.cs" />
     <Compile Include="Models\Learning\GadgetLearning\GedgetLearningPage.cs" />
     <Compile Include="Models\Learning\GlobalizationScenario\GlobalizationScenario.cs" />
@@ -303,6 +305,7 @@
     <Compile Include="Models\Validator\SitePageDataValidator.cs" />
     <Compile Include="Models\StandardPage.cs" />
     <Compile Include="Models\ViewModels\BlockEditPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\ConfigurationSitePageDataViewModel.cs" />
     <Compile Include="Models\ViewModels\DdsViewModel.cs" />
     <Compile Include="Models\ViewModels\DefaultPageViewModel.cs" />
     <Compile Include="Models\ViewModels\EditSampleViewModel.cs" />
@@ -327,6 +330,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Properties\" />
+    <Folder Include="Views\ConfigurationDemo\" />
     <Folder Include="Views\PagePartialWide\" />
   </ItemGroup>
   <ItemGroup>
@@ -432,6 +436,7 @@
     <Content Include="Views\Learning\PersonalizationVisitorGroups\Index.cshtml" />
     <Content Include="Views\Learning\AdminInterface\Index.cshtml" />
     <Content Include="Views\Learning\GlobalizationScenario\Index.cshtml" />
+    <Content Include="Views\Learning\Configurations\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
