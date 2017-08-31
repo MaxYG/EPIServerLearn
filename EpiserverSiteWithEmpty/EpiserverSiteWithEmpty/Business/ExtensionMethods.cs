@@ -36,7 +36,7 @@ namespace EpiserverSiteWithEmpty.Business
                 EPiServer.Global.UrlRewriteProvider.ConvertToExternal(url, item, System.Text.Encoding.UTF8);
                 return url.Uri;
             }
-            catch (Exception ex)
+            catch 
             {
                 return default(Uri);
             }

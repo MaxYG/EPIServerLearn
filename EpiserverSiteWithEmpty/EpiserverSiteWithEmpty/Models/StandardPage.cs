@@ -37,7 +37,7 @@ namespace EpiserverSiteWithEmpty.Models
         public virtual string Xxx { get; set; }
 
         
-        public virtual string Name { get; set; }
+        public override string Name { get; set; }
 
         public void CreateNewPage(PageReference parent)
         {

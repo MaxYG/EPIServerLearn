@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations;
@@ -213,7 +213,7 @@ namespace EpiserverSiteWithEmpty.Learning.ContentProvider
         public override IEnumerable<Type> MainNavigationTypes { get { return new[] { typeof(ContentFolder) }; } }
 
         public override IEnumerable<Type> CreatableTypes { get { return new[] { typeof(Attendee) }; } }
-    }*/
+    }#1#
 
     [Component]
     public class AttendeeComponent : ComponentDefinitionBase
@@ -230,4 +230,4 @@ namespace EpiserverSiteWithEmpty.Learning.ContentProvider
     }
 
 
-}
+}*/

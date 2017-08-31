@@ -31,7 +31,8 @@ namespace EpiserverSiteWithEmpty.Business
             where T : IContent
         {
             var accessFilter = new FilterAccess();
-            var publishedFilter = new FilterPublished(ServiceLocator.Current.GetInstance<IContentRepository>());
+            var publishedFilter = new FilterPublished();
+//            var publishedFilter = new FilterPublished(ServiceLocator.Current.GetInstance<IContentRepository>());
             contents = contents.Where(x => !publishedFilter.ShouldFilter(x) && !accessFilter.ShouldFilter(x));
             if (requirePageTemplate)
             {
