@@ -15,7 +15,8 @@ namespace EpiserverSiteWithEmpty.Controllers
         // GET: ConfigurationDemo
         public ActionResult Index(ConfigurationSitePageData currentPage)
         {
-           
+            
+
             var model = new ConfigurationSitePageDataViewModel(currentPage)
             {
                 ElementName = EPiServer.Configuration.Settings.Instance.ElementName,

@@ -244,6 +244,7 @@
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\ExtensionMethods.cs" />
     <Compile Include="Commons\EpiProvider.cs" />
+    <Compile Include="Commons\EventHelperProvider.cs" />
     <Compile Include="Commons\RoleEnum.cs" />
     <Compile Include="Commons\SystemTabNames.cs" />
     <Compile Include="Controllers\AdminInterfaceController.cs" />
