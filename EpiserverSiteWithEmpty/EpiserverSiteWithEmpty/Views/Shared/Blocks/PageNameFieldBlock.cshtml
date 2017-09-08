@@ -1,0 +1,7 @@
+﻿@model EpiserverSiteWithEmpty.Commons.FormElementWithACustomValidator.PageNameFieldBlock
+
+<h1>@Model.PageName</h1>
+
+<input name="@Model.FormElement.Code" id="@Model.FormElement.Guid" type="hidden"
+       value="@Model.PageName"
+       class="Form__Element FormHidden FormHideInSummarized" @Html.Raw(Model.FormElement.AttributesString) />

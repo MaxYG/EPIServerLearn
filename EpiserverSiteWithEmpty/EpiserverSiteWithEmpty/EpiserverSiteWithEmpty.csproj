@@ -378,6 +378,7 @@
     <Folder Include="Models\Properties\" />
     <Folder Include="Views\ConfigurationDemo\" />
     <Folder Include="Views\PagePartialWide\" />
+    <Folder Include="Views\Shared\ElementBlocks\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\iPhone4\device-320x480.png" />
@@ -493,6 +494,7 @@
     <Content Include="Views\Learning\GlobalizationScenario\Index.cshtml" />
     <Content Include="Views\Learning\Configurations\Index.cshtml" />
     <Content Include="Views\FormsPage\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\PageNameFieldBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
