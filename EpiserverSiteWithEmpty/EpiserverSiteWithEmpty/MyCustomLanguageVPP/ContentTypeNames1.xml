@@ -14,7 +14,7 @@
     </contenttypes>
 
     <groups>
-      <information>Group name from XML file</information>
+      <information>Group name from XML file: GroupName = SystemTabNames.Content, in GlobalizationScenarioController</information>
     </groups>
   </language>
 
