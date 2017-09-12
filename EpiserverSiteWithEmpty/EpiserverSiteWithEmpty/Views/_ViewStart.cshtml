@@ -2,3 +2,12 @@
 @{
     Layout = "~/Views/Shared/Layouts/_Root.cshtml";
 }
+
+$(function(){
+    if (typeof $$epiforms !== 'undefined') {
+       console.log('listen to event');
+       $$epiforms(".EPiServerForms").on("formsLoadExternalScripts formsLoadExternalCss", function (event, param1, param2) {
+              console.log($(this).get(0), event);
+          });
+    }
+})
