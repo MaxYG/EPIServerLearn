@@ -1,5 +1,6 @@
 ﻿
 @using EpiserverSiteWithEmpty.Models.ViewModels
+@using EPiServer.Framework.Web.Mvc.Html
 @model EpiserverSiteWithEmpty.Models.ViewModels.IPageViewModel<EpiserverSiteWithEmpty.Models.Pages.SitePageData>
 
 <!DOCTYPE html>
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="@Url.Content("~/Static/css/editmode.css")"/>
     <script type="text/javascript" src="@Url.Content("~/Static/js/jquery.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Static/js/bootstrap.js")"></script>
+    @*<script src="~/ClientResources/ViewMode/loadClientResources.js"></script>*@
 </head>
 <body>
 
@@ -34,8 +36,21 @@
     </div>
     <hr/>
     @RenderBody()
-    @{Html.RenderPartial("Footer",new FooterModel(Model.CurrentPage));}
+    @{Html.RenderPartial("Footer", new FooterModel(Model.CurrentPage));}
     root page
 </div>
 </body>
 </html>
+
+<script>
+        if (typeof $$epiforms !== 'undefined') {
+            $$epiforms(document).ready(function myfunction() {
+                console.log('listen to event');
+                $$epiforms(".EPiServerForms").on("formsNavigationNextStep formsNavigationPrevStep formsSetupCompleted formsReset formsStartSubmitting formsSubmitted formsSubmittedError formsNavigateToStep formsStepValidating", function (event, param1, param2) {
+                    console.log($(this).get(0), event);
+                });
+            });
+        }
+</script>
+
+@*@Html.RequiredClientResources("Footer")*@
