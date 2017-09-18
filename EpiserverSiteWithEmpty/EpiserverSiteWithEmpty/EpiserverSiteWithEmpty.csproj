@@ -373,6 +373,7 @@
     <Compile Include="Commons\EventHelperProvider.cs" />
     <Compile Include="Commons\MyCustomElementBlock.cs" />
     <Compile Include="Commons\PlaceholderDemoProvider.cs" />
+    <Compile Include="Commons\RedirectToThankYouPage.cs" />
     <Compile Include="Commons\RoleEnum.cs" />
     <Compile Include="Commons\SystemTabNames.cs" />
     <Compile Include="Controllers\AdminInterfaceController.cs" />
