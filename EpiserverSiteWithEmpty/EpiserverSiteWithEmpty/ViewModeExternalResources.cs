@@ -8,25 +8,26 @@ using EPiServer.ServiceLocation;
 
 namespace EpiserverSiteWithEmpty
 {
-    /// <summary>
-    /// </summary>
-    [ServiceConfiguration(ServiceType = typeof(IViewModeExternalResources))]
-    public class ViewModeExternalResources : IViewModeExternalResources
-    {
-        public virtual IEnumerable<Tuple<string, string>> Resources
-        {
-            get
-            {
-                var publicVirtualPath = ModuleHelper.GetPublicVirtualPath("EpiserverSiteWithEmpty");
-                var currentPageLanguage = FormsExtensions.GetCurrentPageLanguage();
 
-                var arrRes = new List<Tuple<string, string>>();
+    //forms: Loading resources
+    ///// <summary>
+    ///// </summary>
+    //[ServiceConfiguration(ServiceType = typeof(IViewModeExternalResources))]
+    //public class ViewModeExternalResources : IViewModeExternalResources
+    //{
+    //    public virtual IEnumerable<Tuple<string, string>> Resources
+    //    {
+    //        get
+    //        {
+    //            var publicVirtualPath = ModuleHelper.GetPublicVirtualPath("EpiserverSiteWithEmpty");
+    //            var currentPageLanguage = FormsExtensions.GetCurrentPageLanguage();
 
-                arrRes.Add(new Tuple<string, string>("script", publicVirtualPath+ "/ClientResources/ViewMode/aaaaaaaaaaaaaaaaaaa.js"));
+    //            var arrRes = new List<Tuple<string, string>>();
 
-                return arrRes;
-            }
-        }
+    //            arrRes.Add(new Tuple<string, string>("script", publicVirtualPath+ "/ClientResources/ViewMode/aaaaaaaaaaaaaaaaaaa.js"));
 
-    }
+    //            return arrRes;
+    //        }
+    //    }
+    //}
 }

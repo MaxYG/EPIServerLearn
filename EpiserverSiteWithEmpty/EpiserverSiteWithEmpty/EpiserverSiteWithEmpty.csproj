@@ -368,9 +368,10 @@
     <Compile Include="Business\Channels\MobileResolution.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\ExtensionMethods.cs" />
+    <Compile Include="Commons\CustomActor.cs" />
     <Compile Include="Commons\EpiProvider.cs" />
     <Compile Include="Commons\EventHelperProvider.cs" />
-    <Compile Include="Commons\FormElementWithACustomValidator\MyCustomElementBlock.cs" />
+    <Compile Include="Commons\MyCustomElementBlock.cs" />
     <Compile Include="Commons\PlaceholderDemoProvider.cs" />
     <Compile Include="Commons\RoleEnum.cs" />
     <Compile Include="Commons\SystemTabNames.cs" />

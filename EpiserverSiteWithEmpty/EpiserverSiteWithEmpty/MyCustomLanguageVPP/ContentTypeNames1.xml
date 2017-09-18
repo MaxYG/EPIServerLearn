@@ -16,6 +16,17 @@
     <groups>
       <information>Group name from XML file: GroupName = SystemTabNames.Content, in GlobalizationScenarioController</information>
     </groups>
+    
+    <episerver>
+      <forms>
+        <submissionactors>
+          <EpiserverSiteWithEmpty.Commons.CustomActor>
+            <displayname>Custom Actor</displayname>
+          </EpiserverSiteWithEmpty.Commons.CustomActor>
+        </submissionactors>
+      </forms>
+    </episerver>
+    
   </language>
 
   <language id="en" name="English">

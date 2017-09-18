@@ -30,12 +30,12 @@ namespace EpiserverSiteWithEmpty.Controllers
              * you can pass the page type for simpler templates */
 
             // get the Forms Event Manager to listen to its events
-            var formsEvents = ServiceLocator.Current.GetInstance<FormsEvents>();
-            formsEvents.FormsStructureChange += OnStructureChange;
-            formsEvents.FormsSubmitting += OnSubmitting1;
-            formsEvents.FormsSubmitting += OnSubmitting2;
-            formsEvents.FormsStepSubmitted += OnStepSubmit;
-            formsEvents.FormsSubmissionFinalized += OnFormFinalized;
+//            var formsEvents = ServiceLocator.Current.GetInstance<FormsEvents>();
+//            formsEvents.FormsStructureChange += OnStructureChange;
+//            formsEvents.FormsSubmitting += OnSubmitting1;
+//            formsEvents.FormsSubmitting += OnSubmitting2;
+//            formsEvents.FormsStepSubmitted += OnStepSubmit;
+//            formsEvents.FormsSubmissionFinalized += OnFormFinalized;
 
             var model = new DefaultPageViewModel<FormsPage>(currentPage);
             return View(model);
@@ -75,7 +75,7 @@ namespace EpiserverSiteWithEmpty.Controllers
         private void OnStructureChange(object sender, FormsEventArgs e)
         {
             
-            EpiLogging.LoggingMessage(string.Format("Form:{0}[{1}] has changed its structure", e.FormsContent.Name, e.FormsContent.ContentGuid));
+            EpiLogging.LoggingMessage($"Form:{e.FormsContent.Name}[{e.FormsContent.ContentGuid}] has changed its structure");
 
             if (e.Data is FormStructure)
             {
@@ -89,22 +89,22 @@ namespace EpiserverSiteWithEmpty.Controllers
    
 
 //    //https://blog.tech-fellow.net/2016/12/26/customize-css-styles-loaded-from-episerver-forms-samples/
-//    [InitializableModule]
-//    [ModuleDependency(typeof(InitializationModule))]
-//    public class InitializationModule1 : IConfigurableModule
-//    {
-//        public void Initialize(InitializationEngine context) { }
-//
-//        public void Uninitialize(InitializationEngine context) { }
-//
-//        public void ConfigureContainer(ServiceConfigurationContext context)
-//        {
-//            context.Container.Configure(
-//                cfg =>
-//                        cfg.For<IViewModeExternalResources>()
-//                           .DecorateAllWith<CustomResources>());
-//        }
-//    }
+    //[InitializableModule]
+    //[ModuleDependency(typeof(InitializationModule))]
+    //public class InitializationModule1 : IConfigurableModule
+    //{
+    //    public void Initialize(InitializationEngine context) { }
+
+    //    public void Uninitialize(InitializationEngine context) { }
+
+    //    public void ConfigureContainer(ServiceConfigurationContext context)
+    //    {
+    //        context.Container.Configure(
+    //            cfg =>
+    //                    cfg.For<IViewModeExternalResources>()
+    //                       .DecorateAllWith<CustomResources>());
+    //    }
+    //}
 //
 //    public class CustomResources : IViewModeExternalResources
 //    {
