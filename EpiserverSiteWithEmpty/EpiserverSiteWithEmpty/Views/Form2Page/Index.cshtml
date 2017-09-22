@@ -1,0 +1,14 @@
+﻿
+
+@using EPiServer.Web.Mvc.Html
+
+@model EpiserverSiteWithEmpty.Models.ViewModels.DefaultPageViewModel<EpiserverSiteWithEmpty.Models.Pages.Form2Page>
+
+<div class="row">
+    @Html.PropertyFor(x => x.CurrentPage.MainContentArea, new {rowsupport=true,rowcssclass="special-row" })
+</div>
+
+
+<div class="row">
+    @Html.PropertyFor(x => x.CurrentPage.MainContentArea, new { rowsupport = true, rowcssclass = "special-row" })
+</div>

@@ -9,6 +9,7 @@ using EPiServer.Cms.Shell.UI.ObjectEditing.EditorDescriptors;
 using EPiServer.Core;
 using EPiServer.DataAbstraction.Migration;
 using EPiServer.Forms.Core.Data;
+using EPiServer.Forms.Core.Internal;
 using EPiServer.Forms.Core.Models.Internal;
 using EPiServer.Forms.Core.PostSubmissionActor;
 using EPiServer.Forms.EditView;
@@ -30,6 +31,14 @@ namespace EpiserverSiteWithEmpty.Commons
         private readonly Injected<IFormDataRepository> _formDataRepository;
         public override object Run(object input)
         {
+            //Managing cookies start---------------
+            var psService = ServiceLocator.Current.GetInstance<ProgressiveSubmitInfoService>();
+          
+            //Managing cookies end---------------
+
+
+
+
             //skip execution if keyvaluepair is empty
             var model = Model as List<KeyValuePairModel>;
             if (model==null || !model.Any())

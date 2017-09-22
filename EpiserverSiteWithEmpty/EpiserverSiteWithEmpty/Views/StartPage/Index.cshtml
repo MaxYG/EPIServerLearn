@@ -6,11 +6,13 @@
 <h1 @Html.EditAttributes(x => x.CurrentPage.Heading)>
     @(Model.CurrentPage.Heading??Model.CurrentPage.PageName)
 </h1>
-<div>
+<div class="row">
     start page
     @Html.PropertyFor(m => m.CurrentPage.MainBody)
 </div>
 
-@Html.PropertyFor(x=>x.CurrentPage.MainContentArea,new {CssClass="border",tag="span4"})
+<div class="row">
+    @Html.PropertyFor(x => x.CurrentPage.MainContentArea, new { CssClass = "border", tag = "span12" })
+</div>
 
 exercise e2 create news page & news Items 没有达到预期效果
